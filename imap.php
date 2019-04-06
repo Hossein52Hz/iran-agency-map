@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name:       Imap
  * Plugin URI:        wpro.ir
@@ -17,3 +16,37 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+/**
+ * install and prepare imap table in Database
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/activation.php';
+
+/**
+ * create table list of agencies and display theme
+ */
+
+ require_once plugin_dir_path( __FILE__ ) . 'admin/agency_item_lists.php';
+
+ /**
+  * create imap admin menu and sub-menu
+  */
+  require_once plugin_dir_path( __FILE__ ) . 'admin/imap-admin-menu.php';
+
+  /**
+   * add agency page handler
+   */
+  require_once plugin_dir_path( __FILE__ ) . 'admin/agency_page_handler.php';
+
+  require_once plugin_dir_path( __FILE__ ) . 'admin/new-edit-form-handler.php';
+
+  /**
+   * create plugin settings page
+   */
+  require_once plugin_dir_path( __FILE__ ) . 'admin/imap-settings.php';
+
+  /**
+   * add translation section
+   */
+  require_once plugin_dir_path( __FILE__ ) . 'includes/translation.php';
+  ?>

@@ -49,4 +49,9 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/activation.php';
    * add translation section
    */
   require_once plugin_dir_path( __FILE__ ) . 'includes/translation.php';
+
+  /**
+   * add script and style of imap plugin
+   */
+  require_once plugin_dir_path( __FILE__ ) . 'includes/scripts.php';
   ?>

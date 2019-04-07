@@ -1,6 +1,6 @@
 <?php
 /**
- * include js script
+ * include admin script/style
  */
 function new_agency_form_script($hook) {
     // if ( 'admin.php?page=agencies_form' != $hook ) {
@@ -21,7 +21,9 @@ add_action( 'admin_enqueue_scripts', 'load_wp_media_files' );
 add_action( 'admin_enqueue_scripts', 'new_agency_form_script' );
 
 /**
- * include css style
+ * include frontend script/style
+ * I include style and script in imap-shortcut.php file because 
+ * they should included when they are in a page that it haave [shortcut]
  */
 
 ?>

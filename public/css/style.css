@@ -1,0 +1,216 @@
+/* *{
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    color: #5d5d5d;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 30px;
+    margin: auto;
+    margin-top: 50px;
+} */
+
+.container {
+    /* width: 100%; */
+    margin: auto;
+    clear: both;
+}
+/* .myText {
+  overflow: auto;
+  border-radius: 10px;
+  direction: rtl;
+  color:#000;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  margin: 14px;
+  float: right;
+  margin-top: 40px;
+} */
+
+/* Specific mapael css class are below
+         * 'mapael' class is added by plugin
+        */
+.mapcontainer{
+  padding: 50px 0;
+}
+.mapael .map {
+    /* position: relative; */
+    /* float: left; */
+    /* width: 50%; */
+}
+.mapael .map svg{
+  width: 50%;
+  height: 500px;
+  float: left;
+}
+
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.70;
+    filter: alpha(opacity=70);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    color: #343434;
+}
+
+
+/* branch section */
+.aboutus{
+  overflow: auto;
+  border-radius: 10px;
+  direction: rtl;
+  color:#000;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  width: 62%;
+  margin: 14px;
+  float: right;
+  margin-top: 40px;
+}
+.branch {
+  overflow: auto;
+  border-radius: 10px;
+  direction: rtl;
+  color:#000;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  width: 30%;
+  margin: 14px;
+  float: right;
+  margin-top: 40px;
+}
+.right{
+  float:right;
+}
+.contact{
+  clear: both;
+  margin-top: 20px;
+}
+.contact ul{
+  padding: 34px;
+  list-style: none;
+  border-top: 1px solid #ddd;
+}
+.contact ul li{
+  padding-bottom: 24px;
+}
+.contact ul li span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.info{
+  display: block;
+  float: right;
+  list-style: none;
+  padding-right: 14px;
+}
+.cityname{
+  font-size: 22px;
+  font-weight: bold;
+  padding-bottom: 7px;
+}
+
+.about-desc{
+  overflow: auto;
+  border-radius: 10px;
+  direction: rtl;
+  color:#000;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  width: 60%;
+  margin: 14px;
+  float: right;
+  margin-top: 40px;
+  padding: 48px;
+}
+.about-desc .about-us p{
+  font-size: 22px;
+  line-height: 38px;
+  text-align: justify;
+}
+.province-button{
+  float: right;
+    /* position: relative; */
+    /* max-width: 54%; */
+    width: 50%;
+    display: block;
+}
+.province-button ul li{
+  width: 33.3333333333333%;
+  display: block;
+  border-radius: 4px;
+  padding: 4px;
+  text-align: center;
+  font-size: 11px;
+  float: right;
+
+  /* width: 18%;
+  list-style: none;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  padding: 4px;
+  margin: 8px;
+  text-align: center;
+  font-size: 12px;
+  float: right; */
+}
+.province-button ul li a:hover{
+  background: red;
+  color: #fff;
+}
+.province-button ul li a{
+  text-decoration: none;
+    color: #000;
+    display: block;
+    background: rgb(199, 215, 223);
+    border-bottom: 0;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+@-webkit-keyframes ball-scale-ripple {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.7; }
+  100% {
+    opacity: 0.0; } }
+
+@keyframes ball-scale-ripple {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.7; }
+  100% {
+    opacity: 0.0; } }
+
+.ball-scale-ripple > div {
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+          animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }

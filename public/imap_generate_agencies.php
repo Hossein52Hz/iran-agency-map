@@ -21,7 +21,7 @@ function imap_generate_areas()
                    {
                        if( $row1->province_en_name == $row->agency_province_name )
                        {
-                           echo  '<div class="branch"><div><img src="' . $row->agency_url_logo . '" class="profile right"><ul class="info"><li class="cityname">' . $row->agency_city_name . '</li><li class="fullname">' . $row->agency_name . '</li></ul></div><div class="contact"><ul><li><span>مدیریت: </span> ' . $row->agency_full_name . '</li><li><span>' . $row->agency_tell . '</span>031-31234567</li><li><span>شماره همراه: </span>' . $row->agency_mobile . '</li><li><span>آدرس: </span>' . $row->agency_address . '</li></ul></div></div>';
+                           echo  '<div class="branch"><div><img src="' . $row->agency_url_logo . '" class="profile right"><ul class="info"><li class="cityname">' . $row->agency_city_name . '</li><li class="fullname">' . $row->agency_name . '</li></ul></div><div class="contact"><ul><li><span>مدیریت: </span> ' . $row->agency_full_name . '</li><li><span> شماره تلفن: </span>' . $row->agency_tell . '</li><li><span>شماره همراه: </span>' . $row->agency_mobile . '</li><li><span>آدرس: </span>' . $row->agency_address . '</li></ul></div></div>';
                        }
                    }
                    echo "'";

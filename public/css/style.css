@@ -39,15 +39,17 @@ h1 {
         */
 .mapcontainer{
   padding: 50px 0;
+  position: relative;
 }
 .mapael .map {
     /* position: relative; */
     /* float: left; */
     /* width: 50%; */
+    position: absolute;
 }
 .mapael .map svg{
   width: 50%;
-  height: 500px;
+  height: auto;
   float: left;
 }
 
@@ -56,10 +58,11 @@ h1 {
     background-color: #fff;
     opacity: 0.70;
     filter: alpha(opacity=70);
-    border-radius: 10px;
-    padding: 10px;
+    /* border-radius: 10px; */
+    padding: 5px 10px;
     z-index: 1000;
     max-width: 200px;
+    font-size: 11px;
     display: none;
     color: #343434;
 }
@@ -87,10 +90,15 @@ h1 {
   font-size: 16px;
   padding: 10px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  width: 30%;
+  width: 100%;
   margin: 14px;
   float: right;
   margin-top: 40px;
+}
+.branch img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 .right{
   float:right;
@@ -100,15 +108,16 @@ h1 {
   margin-top: 20px;
 }
 .contact ul{
-  padding: 34px;
+  padding: 0px;
   list-style: none;
   border-top: 1px solid #ddd;
 }
 .contact ul li{
-  padding-bottom: 24px;
+  padding: 7px;
+  border-bottom: 1px solid #ddd;
 }
 .contact ul li span {
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: bold;
 }
 .info{
@@ -118,9 +127,9 @@ h1 {
   padding-right: 14px;
 }
 .cityname{
-  font-size: 22px;
-  font-weight: bold;
-  padding-bottom: 7px;
+  font-size: 100%;
+    font-weight: bold;
+    padding-top: 3px;
 }
 
 .about-desc{

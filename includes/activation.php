@@ -54,7 +54,8 @@ function imap_agency_install()
         agency_tell bigint(20) NOT NULL,
         agency_mobile bigint(20) NOT NULL,
         agency_address longtext COLLATE utf8_unicode_ci NOT NULL,
-        agency_url_logo varchar(100) COLLATE utf8_unicode_ci NOT NULL
+        agency_url_logo varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+        PRIMARY KEY  (id)
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
     // we do not execute sql directly

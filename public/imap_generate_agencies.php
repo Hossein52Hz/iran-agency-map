@@ -29,5 +29,19 @@ function imap_generate_areas()
     }
     echo '},';
 }
+function imap_generate_plot()
+{
+    global $wpdb;
+    $province_plot_result = $wpdb->get_results( ' SELECT DISTINCT province_en_name, position_x, position_y FROM wp_imap_province INNER JOIN wp_imap ON wp_imap.agency_province_name=wp_imap_province.province_en_name ' );
+    echo ' plots: { ';
+    foreach ( $province_plot_result AS $row ) 
+    {
+        echo "'" . $row->province_en_name . "': {";
+        echo "latitude: " . $row->position_x . ",";
+        echo "longitude: " . $row->position_y . ",";
+        echo ' }, ';
+    }
+    echo ' }, ';
+}
 
 ?>

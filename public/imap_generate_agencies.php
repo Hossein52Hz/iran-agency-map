@@ -43,5 +43,22 @@ function imap_generate_plot()
     }
     echo ' }, ';
 }
+function imap_generate_link()
+{
+    global $wpdb;
+    $province_link_result = $wpdb->get_results( ' SELECT DISTINCT agency_province_name FROM wp_imap ' );
+    $central_agency = 'alborz';
 
+    echo ' links: { ';
+    foreach ( $province_link_result AS $row ) 
+    {
+        if( $central_agency != $row->agency_province_name )
+        {
+            echo "'".$central_agency ."-". $row->agency_province_name."':{";
+            echo "between: [" . "'" . $central_agency . "'," . "'" .rtrim($row->agency_province_name)."'],";
+            echo '},';
+        }
+    }
+    echo '}';
+}
 ?>

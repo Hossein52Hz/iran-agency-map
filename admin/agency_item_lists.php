@@ -126,7 +126,7 @@ class imap_agency_List_Table extends WP_List_Table
             'agency_tell' =>    __('agency_tell', 'imap'),
             'agency_mobile' =>  __('agency_mobile', 'imap'),
             'agency_address' => __('agency_address', 'imap'),
-            'agency_url_logo' =>    __('agency_url_logo', 'imap'),
+            // 'agency_url_logo' =>    __('agency_url_logo', 'imap'),
         );
         return $columns;
     }
@@ -148,7 +148,7 @@ class imap_agency_List_Table extends WP_List_Table
             'agency_tell' =>    array('agency_tell',false ),
             'agency_mobile' =>  array('agency_mobile',false ),
             'agency_address' => array('agency_address',false ),
-            'agency_url_logo' =>    array('agency_url_logo',false ),
+            // 'agency_url_logo' =>    array('agency_url_logo',false ),
         );
         return $sortable_columns;
     }

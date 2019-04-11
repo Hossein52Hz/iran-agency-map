@@ -74,13 +74,17 @@ function imap_centeral_agency_render(  ) {
 
 	<?php 
 		foreach ($central_agency_result as $row) {
-			echo '<option value="' ;
+
+			if($options['imap_centeral_agency'] == $row->agency_province_name )
+			{
+				echo '<option selected="selected" value="' ;
+			}
+			else echo '<option value="' ;
+			
 			echo _e( $row->agency_province_name, 'imap' );
 			echo '">';
 			echo _e( $row->agency_province_name, 'imap' );
 			echo '</option>';
-			// echo '<option value="' . _e( $row->agency_province_name, 'imap' ) . '">' .  _e( $row->agency_province_name, 'imap' ) .'</option>';
-			# code...
 		}
 	?>
 		

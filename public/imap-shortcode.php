@@ -56,6 +56,25 @@
     ?>
         });
     });
+   
+</script>
+<script> 
+
+$(function () {
+
+    var listOfProvinces = document.querySelector(".provinces-list");
+        listOfProvinces.addEventListener("mouseover", e =>{
+        var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
+        pathColor.setAttribute("fill", "rgb(243, 138, 3)");
+    });
+
+    // pathYouNeeded.style.fill='rgb(243, 138, 3)';
+    listOfProvinces.addEventListener("mouseout", e =>{
+    var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
+    pathColor.setAttribute("fill", "rgb(199, 215, 223)");
+    });
+});
+ 
 </script>
 
 <div class="container">
@@ -65,38 +84,41 @@
     <div class="mapcontainer">
         <div class="map"></div>
         <div class="province-button">
-            <ul>
-                <li><a href="#"> آذربایجان شرقی </a></li>
-                <li><a href="#"> آذربایجان غربی </a></li>
-                <li><a href="#"> اردبیل </a></li>
-                <li><a href="#"> اصفهان </a></li>
-                <li><a href="#"> البرز </a></li>
-                <li><a href="#"> ایلام </a></li>
-                <li><a href="#"> بوشهر </a></li>
-                <li><a href="#"> تهران </a></li>
-                <li><a href="#"> چهارمحال بختیاری </a></li>
-                <li><a href="#"> خراسان جنوبی </a></li>
-                <li><a href="#"> خراسان رضوی </a></li>
-                <li><a href="#"> خراسان شمالی </a></li>
-                <li><a href="#"> خوزستان </a></li>
-                <li><a href="#"> زنجان </a></li>
-                <li><a href="#"> سمنان </a></li>
-                <li><a href="#"> سیستان و بلوچستان </a></li>
-                <li><a href="#"> فارس </a></li>
-                <li><a href="#"> قزوین </a></li>
-                <li><a href="#"> قم </a></li>
-                <li><a href="#"> کردستان </a></li>
-                <li><a href="#"> کرمان </a></li>
-                <li><a href="#"> کرمانشاه </a></li>
-                <li><a href="#"> کهگیلویه و بویر احمد </a></li>
-                <li><a href="#"> گلستان </a></li>
-                <li><a href="#"> گیلان </a></li>
-                <li><a href="#"> لرستان </a></li>
-                <li><a href="#"> مازندران </a></li>
-                <li><a href="#"> مرکزی </a></li>
-                <li><a href="#"> هرمزگان </a></li>
-                <li><a href="#"> همدان </a></li>
-                <li><a href="#"> یزد </a></li>
+            <ul class="provinces-list">
+                <li id="alborz">                    <a href="#" id="alborz">                      <?php _e( 'alborz', 'imap' ); ?> </a> </li>
+                <li id="ardabil">                   <a href="#" id="ardabil">                     <?php _e('ardabil', 'imap'); ?> </a></li>
+                <li id="east-azerbaijan">           <a href="#" id="east-azerbaijan">             <?php _e('east-azerbaijan', 'imap'); ?> </a></li>
+                <li id="west-azerbaijan">           <a href="#" id="west-azerbaijan">             <?php _e('west-azerbaijan', 'imap'); ?> </a></li>
+                <li id="bushehr">                   <a href="#" id="bushehr">                     <?php _e('bushehr', 'imap'); ?> </a></li>
+                <li id="chaharmahal-and-bakhtiari"> <a href="#" id="chaharmahal-and-bakhtiari">   <?php _e('chaharmahal-and-bakhtiari', 'imap'); ?> </a></li>
+                <li id="fars">                      <a href="#" id="fars">                        <?php _e('fars', 'imap'); ?> </a></li>
+                <li id="gilan">                     <a href="#" id="gilan">                       <?php _e('gilan', 'imap'); ?> </a></li>
+                <li id="golestan">                  <a href="#" id="golestan">                    <?php _e('golestan', 'imap'); ?> </a></li>
+                <li id="hamadan">                   <a href="#" id="hamadan">                     <?php _e('hamadan', 'imap'); ?> </a></li>
+                <li id="hormozgan">                 <a href="#" id="hormozgan">                   <?php _e('hormozgan', 'imap'); ?> </a></li>
+                <li id="ilam">                      <a href="#" id="ilam">                        <?php _e('ilam', 'imap'); ?> </a></li>
+                <li id="isfahan">                   <a href="#" id="isfahan">                     <?php _e('isfahan', 'imap'); ?> </a></li>
+                <li id="kerman">                    <a href="#" id="kerman">                      <?php _e('kerman', 'imap'); ?> </a></li>
+                <li id="kermanshah">                <a href="#" id="kermanshah">                  <?php _e('kermanshah', 'imap'); ?> </a></li>
+                <li id="north-khorasan">            <a href="#" id="north-khorasan">              <?php _e('north-khorasan', 'imap'); ?> </a></li>
+                <li id="khorasan-razavi">           <a href="#" id="khorasan-razavi">             <?php _e('khorasan-razavi', 'imap'); ?> </a></li>
+                <li id="south-khorasan">            <a href="#" id="south-khorasan">              <?php _e('south-khorasan', 'imap'); ?> </a></li>
+                <li id="khuzestan">                 <a href="#" id="khuzestan">                   <?php _e('khuzestan', 'imap'); ?> </a></li>
+                <li id="kohgiluyeh-and-boyer-ahmad"><a href="#" id="kohgiluyeh-and-boyer-ahmad">  <?php _e('kohgiluyeh-and-boyer-ahmad', 'imap'); ?> </a></li>
+                <li id="kurdistan">                 <a href="#" id="kurdistan">                   <?php _e('kurdistan', 'imap'); ?> </a></li>
+                <li id="lorestan">                  <a href="#" id="lorestan">                    <?php _e('lorestan', 'imap'); ?> </a></li>
+                <li id="markazi">                   <a href="#" id="markazi">                     <?php _e('markazi', 'imap'); ?> </a></li>
+                <li id="mazandaran">                <a href="#" id="mazandaran">                  <?php _e('mazandaran', 'imap'); ?> </a></li>
+                <li id="qazvin">                    <a href="#" id="qazvin">                      <?php _e('qazvin', 'imap'); ?> </a></li>
+                <li id="qom">                       <a href="#" id="qom">                         <?php _e('qom', 'imap'); ?> </a></li>
+                <li id="semnan">                    <a href="#" id="semnan">                      <?php _e('semnan', 'imap'); ?> </a></li>
+                <li id="sistan-baluchestan">        <a href="#" id="sistan-baluchestan">          <?php _e('sistan-baluchestan', 'imap'); ?> </a></li>
+                <li id="tehran">                    <a href="#" id="tehran">                      <?php _e('tehran', 'imap'); ?> </a></li>
+                <li id="yazd">                      <a href="#" id="yazd">                        <?php _e('yazd', 'imap'); ?> </a></li>
+                <li id="zanjan">                    <a href="#" id="zanjan">                      <?php _e('zanjan', 'imap'); ?> </a></li>
+                <!-- <li id="caspian">                   <a href="#" id="caspian">                     <?php _e('caspian', 'imap'); ?> </a></li> -->
+                <!-- <li id="persian-gulf">              <a href="#" id="persian-gulf">                <?php _e('persian-gulf', 'imap'); ?> </a></li> -->
+                <!-- <li id="urmia">                     <a href="#" id="urmia">                       <?php _e('urmia', 'imap'); ?> </a></li> -->
 
             </ul>
         </div>

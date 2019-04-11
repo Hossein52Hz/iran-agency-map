@@ -113,14 +113,17 @@ function imap_agency_install()
     ('yazd', 'یزد', 450, 570),
     ('zanjan', 'زنجان', 210, 220)"
     );
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($insert_province_data);
     
     // -- Indexes for table `wp_imap`
     $set_fkey = $wpdb->query(" ALTER TABLE `wp_imap` ADD KEY `agency_province_name` (`agency_province_name`) ");
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($set_fkey);
 
     // -- Indexes for table `wp_imap_province`
     $set_pkey = $wpdb->query(" ALTER TABLE `wp_imap_province` ADD PRIMARY KEY (`province_en_name`) ");
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($set_pkey);
 
 
@@ -164,17 +167,17 @@ function imap_agency_install()
     // }
 }
 
-register_activation_hook(__FILE__, 'imap_agency_install');
+// register_activation_hook(__FILE__, 'imap_agency_install');
 
 /**
     * Trick to update plugin database, see docs
     */
-function imap_agency_update_db_check()
-{
-    global $imap_agency_db_version;
-    if (get_site_option('imap_agency_db_version') != $imap_agency_db_version) {
-        imap_agency_install();
-    }
-}
+// function imap_agency_update_db_check()
+// {
+//     global $imap_agency_db_version;
+//     if (get_site_option('imap_agency_db_version') != $imap_agency_db_version) {
+//         imap_agency_install();
+//     }
+// }
 
-add_action('plugins_loaded', 'imap_agency_update_db_check');
+// add_action('plugins_loaded', 'imap_agency_update_db_check');

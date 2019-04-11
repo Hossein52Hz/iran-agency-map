@@ -22,6 +22,8 @@ if ( ! defined( 'WPINC' ) ) {
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/activation.php';
 
+register_activation_hook( __FILE__ , 'imap_agency_install');
+
 /**
  * create table list of agencies and display theme
  */

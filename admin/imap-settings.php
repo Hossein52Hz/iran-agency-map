@@ -29,9 +29,9 @@ function imap_settings_init(  ) {
 	);
 
 	add_settings_field( 
-		'imap_select_field_2', 
+		'imap_centeral_agency_name', 
 		__( 'Settings field description', 'imap' ), 
-		'imap_select_field_2_render', 
+		'imap_centeral_agency_render', 
 		'pluginPage', 
 		'imap_pluginPage_section' 
 	);
@@ -63,13 +63,28 @@ function imap_text_field_1_render(  ) {
 
 }
 
-function imap_select_field_2_render(  ) { 
+function imap_centeral_agency_render(  ) { 
 
 	$options = get_option( 'imap_settings' );
+	global $wpdb;
+    $central_agency_result = $wpdb->get_results( ' SELECT DISTINCT `agency_province_name` FROM wp_imap ' );
+
 	?>
-	<select name='imap_settings[imap_select_field_2]'>
-		<option value='1' <?php selected( $options['imap_select_field_2'], 1 ); ?>>Option 1</option>
-		<option value='2' <?php selected( $options['imap_select_field_2'], 2 ); ?>>Option 2</option>
+	<select name='imap_settings[imap_centeral_agency]'>
+
+	<?php 
+		foreach ($central_agency_result as $row) {
+			echo '<option value="' ;
+			echo _e( $row->agency_province_name, 'imap' );
+			echo '">';
+			echo _e( $row->agency_province_name, 'imap' );
+			echo '</option>';
+			// echo '<option value="' . _e( $row->agency_province_name, 'imap' ) . '">' .  _e( $row->agency_province_name, 'imap' ) .'</option>';
+			# code...
+		}
+	?>
+		
+
 	</select>
 
 <?php

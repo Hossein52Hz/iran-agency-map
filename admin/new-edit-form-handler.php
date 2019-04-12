@@ -38,7 +38,7 @@
         );
     
         // here we are verifying does this request is post back and have correct nonce
-        if (wp_verify_nonce($_REQUEST['nonce'], basename(__FILE__))) {
+        if (isset($_POST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], basename(__FILE__))) {
             // combine our default item with request params
             $item = shortcode_atts($default, $_REQUEST);
             // validate data, and if all ok save item to database
@@ -96,7 +96,7 @@
         <?php endif;?>
     
         <form id="form" method="POST">
-            <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__))?>"/>
+            <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__)); ?>"/>
             <?php /* NOTICE: here we storing id to determine will be item added or updated */ ?>
             <input type="hidden" name="id" value="<?php echo $item['id'] ?>"/>
     

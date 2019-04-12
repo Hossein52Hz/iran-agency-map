@@ -72,4 +72,10 @@ register_activation_hook( __FILE__ , 'imap_agency_install');
    */
   require_once plugin_dir_path( __FILE__ ) . 'public/imap-shortcode.php';
 
+
+  /**
+   * Unistall plugin
+   */
+  require_once plugin_dir_path( __FILE__ ) . 'includes/unistall.php';
+  register_uninstall_hook(__FILE__, 'imap_uninstall_plugin');
   ?>

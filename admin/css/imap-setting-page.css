@@ -1,0 +1,16 @@
+.imap-setting-page {
+    background: #fff;
+    width: 700px;
+    margin-top: 30px;
+}
+
+.imap-setting-page form {
+    padding: 40px;
+}
+.imap-setting-page form h2{
+    text-align: center;
+}
+.imap-shortcode{
+    text-align: center;
+    font-weight: bold;
+}

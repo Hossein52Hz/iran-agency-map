@@ -2,8 +2,6 @@
   require_once plugin_dir_path(__FILE__) . 'imap_generate_agencies.php';
   
   function imap_diplay_shortcode( $atts ){
-   
-      
 ?>
 
 <script type="text/javascript">
@@ -116,9 +114,7 @@ $(function () {
                 <li id="tehran">                    <a href="#" id="tehran">                      <?php _e('tehran', 'imap'); ?> </a></li>
                 <li id="yazd">                      <a href="#" id="yazd">                        <?php _e('yazd', 'imap'); ?> </a></li>
                 <li id="zanjan">                    <a href="#" id="zanjan">                      <?php _e('zanjan', 'imap'); ?> </a></li>
-                <!-- <li id="caspian">                   <a href="#" id="caspian">                     <?php _e('caspian', 'imap'); ?> </a></li> -->
-                <!-- <li id="persian-gulf">              <a href="#" id="persian-gulf">                <?php _e('persian-gulf', 'imap'); ?> </a></li> -->
-                <!-- <li id="urmia">                     <a href="#" id="urmia">                       <?php _e('urmia', 'imap'); ?> </a></li> -->
+
 
             </ul>
         </div>
@@ -138,5 +134,5 @@ $(function () {
 
 <?php
  }
- add_shortcode( 'foobar', 'imap_diplay_shortcode' );
+ add_shortcode( 'imap', 'imap_diplay_shortcode' );
  ?>

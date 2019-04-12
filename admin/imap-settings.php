@@ -7,42 +7,42 @@ function imap_settings_init(  ) {
 
 	add_settings_section(
 		'imap_pluginPage_section', 
-		__( 'Your section description', 'imap' ), 
+		__( 'imap setting section', 'imap' ), 
 		'imap_settings_section_callback', 
 		'pluginPage'
 	);
 
-	add_settings_field( 
-		'imap_text_field_0', 
-		__( 'Settings field description', 'imap' ), 
-		'imap_text_field_0_render', 
-		'pluginPage', 
-		'imap_pluginPage_section' 
-	);
+	// add_settings_field( 
+	// 	'imap_text_field_0', 
+	// 	__( 'Settings field description', 'imap' ), 
+	// 	'imap_text_field_0_render', 
+	// 	'pluginPage', 
+	// 	'imap_pluginPage_section' 
+	// );
 
-	add_settings_field( 
-		'imap_text_field_1', 
-		__( 'Settings field description', 'imap' ), 
-		'imap_text_field_1_render', 
-		'pluginPage', 
-		'imap_pluginPage_section' 
-	);
+	// add_settings_field( 
+	// 	'imap_text_field_1', 
+	// 	__( 'Settings field description', 'imap' ), 
+	// 	'imap_text_field_1_render', 
+	// 	'pluginPage', 
+	// 	'imap_pluginPage_section' 
+	// );
 
 	add_settings_field( 
 		'imap_centeral_agency_name', 
-		__( 'Settings field description', 'imap' ), 
+		__( 'central agency', 'imap' ), 
 		'imap_centeral_agency_render', 
 		'pluginPage', 
 		'imap_pluginPage_section' 
 	);
 
-	add_settings_field( 
-		'imap_textarea_field_3', 
-		__( 'Settings field description', 'imap' ), 
-		'imap_textarea_field_3_render', 
-		'pluginPage', 
-		'imap_pluginPage_section' 
-	);
+	// add_settings_field( 
+	// 	'imap_textarea_field_3', 
+	// 	__( 'Settings field description', 'imap' ), 
+	// 	'imap_textarea_field_3_render', 
+	// 	'pluginPage', 
+	// 	'imap_pluginPage_section' 
+	// );
 }
 
 function imap_text_field_0_render(  ) { 
@@ -81,7 +81,7 @@ function imap_centeral_agency_render(  ) {
 			}
 			else echo '<option value="' ;
 			
-			echo _e( $row->agency_province_name, 'imap' );
+			echo "$row->agency_province_name";
 			echo '">';
 			echo _e( $row->agency_province_name, 'imap' );
 			echo '</option>';
@@ -109,7 +109,11 @@ function imap_textarea_field_3_render(  ) {
 
 function imap_settings_section_callback(  ) { 
 
-	echo __( 'This section description', 'imap' );
+	echo __( 'after save setting, you can copy below code to use as the shortcode:', 'imap' );
+	echo "<br>";
+	echo '<h2 class="imap-shortcode">' . __( '[imap]', 'imap' ) . '</h2>';
+	echo "<br>";
+	echo __( 'just copy the [imap] and paste in new page.', 'imap' );
 
 }
 
@@ -117,9 +121,8 @@ function imap_settings_section_callback(  ) {
 function imap_options_page(  ) { 
 
 	?>
+	<div class="imap-setting-page">
 	<form action='options.php' method='post'>
-
-		<h2>imap</h2>
 
 		<?php
 		settings_fields( 'pluginPage' );
@@ -128,6 +131,7 @@ function imap_options_page(  ) {
 		?>
 
 	</form>
+</div>
 	<?php
 
 }

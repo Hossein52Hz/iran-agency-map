@@ -79,7 +79,7 @@
         }
     
         // here we adding our custom meta box
-        add_meta_box('agencies_form_meta_box', 'agency data', 'imap_agency_agencies_form_meta_box_handler', 'agency', 'normal', 'default');
+        add_meta_box('agencies_form_meta_box', __('agency data', 'imap'), 'imap_agency_agencies_form_meta_box_handler', 'agency', 'normal', 'default');
     
         ?>
     <div class="wrap">

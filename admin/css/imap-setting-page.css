@@ -2,15 +2,36 @@
     background: #fff;
     width: 700px;
     margin-top: 30px;
+    font-family: "Vazir";
 }
 
 .imap-setting-page form {
     padding: 40px;
 }
-.imap-setting-page form h2{
+
+.imap-setting-page form h2 {
     text-align: center;
+    font-family: "Vazir";
 }
-.imap-shortcode{
+
+.imap-shortcode {
     text-align: center;
     font-weight: bold;
+}
+
+.add-new-agency input {
+    text-align: right;
+    direction: rtl;
+    font-family: "Vazir";
+}
+.add-new-agency th{
+    font-family: "Vazir";
+}
+#agency-province-name {
+    max-width: 300px;
+    direction: rtl;
+    padding: 6px;
+    height: 36px;
+    line-height: 30px;
+    font-family: "Vazir";
 }

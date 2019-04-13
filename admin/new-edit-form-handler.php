@@ -95,7 +95,7 @@
         <div id="message" class="updated"><p><?php echo $message ?></p></div>
         <?php endif;?>
     
-        <form id="form" method="POST">
+        <form id="form" class="add-new-agency" method="POST">
             <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__)); ?>"/>
             <?php /* NOTICE: here we storing id to determine will be item added or updated */ ?>
             <input type="hidden" name="id" value="<?php echo $item['id'] ?>"/>
@@ -227,8 +227,8 @@
             <label for="agency-address"><?php _e('agency address', 'imap')?></label>
         </th>
         <td>
-            <textarea id="agency-address" name="agency_address" type="textarea" style="width: 95%" value="<?php echo esc_attr($item['agency_address'])?>"
-                     class="code" placeholder="<?php _e('agency address', 'imap')?>" required> </textarea>
+            <input id="agency-address" name="agency_address" type="text" style="width: 95%" value="<?php echo esc_attr($item['agency_address'])?>"
+                     class="code" placeholder="<?php _e('agency address', 'imap')?>" >
         </td>
     </tr>
     

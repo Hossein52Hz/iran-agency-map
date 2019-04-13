@@ -52,7 +52,10 @@ register_activation_hook( __FILE__ , 'imap_agency_install');
   /**
    * add translation section
    */
-  require_once plugin_dir_path( __FILE__ ) . 'includes/translation.php';
+  function imap_agency_languages() {
+    load_plugin_textdomain( 'imap', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+  }
+  add_action( 'plugins_loaded', 'imap_agency_languages' );
 
   /**
    * add script and style of imap plugin

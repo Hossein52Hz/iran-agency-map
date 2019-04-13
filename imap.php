@@ -16,7 +16,9 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); 
+If (is_plugin_active('imap/imap.php'))
+{             
 /**
  * install and prepare imap table in Database
  */
@@ -78,4 +80,5 @@ register_activation_hook( __FILE__ , 'imap_agency_install');
    */
   require_once plugin_dir_path( __FILE__ ) . 'includes/unistall.php';
   register_uninstall_hook(__FILE__, 'imap_uninstall_plugin');
-  ?>
+}
+?>

@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts');
+  src: url('../fonts/vazir/Vazir.eot') format('embedded-opentype'),
+    url('../fonts/vazir/Vazir.woff2') format('woff2'),
+    url('../fonts/vazir/Vazir.woff') format('woff'),
+    url('../fonts/vazir/Vazir.ttf') format('truetype');
+}
+
 /* *{
   padding: 0;
   margin: 0;
@@ -17,10 +28,11 @@ h1 {
 } */
 
 .container {
-    /* width: 100%; */
-    margin: auto;
-    clear: both;
+  /* width: 100%; */
+  margin: auto;
+  clear: both;
 }
+
 /* .myText {
   overflow: auto;
   border-radius: 10px;
@@ -37,128 +49,181 @@ h1 {
 /* Specific mapael css class are below
          * 'mapael' class is added by plugin
         */
-.mapcontainer{
+.mapcontainer {
   padding: 50px 0;
   position: relative;
 }
+
 .mapael .map {
-    /* position: relative; */
-    /* float: left; */
-    /* width: 50%; */
-    position: absolute;
+  /* position: relative; */
+  /* float: left; */
+  /* width: 50%; */
+  position: absolute;
 }
-.mapael .map svg{
+
+.mapael .map svg {
   width: 50%;
   height: auto;
   float: left;
 }
-
+path:hover{
+  cursor: pointer;
+}
 .mapael .mapTooltip {
-    position: absolute;
-    background-color: #fff;
-    opacity: 0.70;
-    filter: alpha(opacity=70);
-    /* border-radius: 10px; */
-    padding: 5px 10px;
-    z-index: 1000;
-    max-width: 200px;
-    font-size: 11px;
-    display: none;
-    color: #343434;
+  position: absolute;
+  background-color: #fff;
+  opacity: 0.70;
+  filter: alpha(opacity=70);
+  /* border-radius: 10px; */
+  padding: 5px 10px;
+  z-index: 1000;
+  max-width: 200px;
+  font-size: 11px;
+  display: none;
+  color: #343434;
 }
 
 
 /* branch section */
-.aboutus{
+.aboutus {
   overflow: auto;
   border-radius: 10px;
   direction: rtl;
-  color:#000;
-  font-size: 16px;
+  /* font-size: 16px; */
   padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  width: 62%;
-  margin: 14px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  width: 100%;
   float: right;
   margin-top: 40px;
 }
+
+.aboutus p {
+  color: #000;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: "Vazir";
+  font-size: 14px;
+}
+
 .branch {
   overflow: auto;
+  max-width: 500px;
   border-radius: 10px;
   direction: rtl;
-  color:#000;
+  color: #000;
   font-size: 16px;
   padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   width: 100%;
   margin: 14px;
   float: right;
   margin-top: 40px;
 }
+
 .branch img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
 }
-.right{
-  float:right;
+
+.right {
+  float: right;
 }
-.contact{
+
+.contact {
   clear: both;
   margin-top: 20px;
 }
-.contact ul{
+
+.contact ul {
   padding: 0px;
   list-style: none;
   border-top: 1px solid #ddd;
 }
-.contact ul li{
+
+.contact ul li {
   padding: 7px;
   border-bottom: 1px solid #ddd;
+  font-family: "Vazir";
 }
+
 .contact ul li span {
   /* font-size: 20px; */
   font-weight: bold;
-}
-.info{
-  display: block;
-  float: right;
-  list-style: none;
-  padding-right: 14px;
-}
-.cityname{
-  font-size: 100%;
-    font-weight: bold;
-    padding-top: 3px;
+  font-family: "Vazir";
 }
 
-.about-desc{
+.contact ul li {
+  font-weight: normal;
+  font-family: "Vazir";
+  list-style: none;
+}
+.contact ul li i{
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  display: inline-flex;
+}
+.profile-icon{
+  background: url(../img/imap-user.png);
+}
+.address-icon{
+  background: url(../img/imap-address.png);
+}
+.tell-icon{
+  background: url(../img/imap-phone.png);
+}
+.mobile-icon{
+  background: url(../img/imap-mobile.png);
+}
+
+.info {
+  display: block;
+  float: right;
+  padding-right: 14px;
+}
+
+.info li {
+  list-style: none;
+  font-family: "Vazir";
+}
+
+.cityname {
+  font-size: 100%;
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+.about-desc {
   overflow: auto;
   border-radius: 10px;
   direction: rtl;
-  color:#000;
+  color: #000;
   font-size: 16px;
   padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   width: 60%;
   margin: 14px;
   float: right;
   margin-top: 40px;
   padding: 48px;
 }
-.about-desc .about-us p{
-  font-size: 22px;
-  line-height: 38px;
+
+.about-desc .about-us p {
   text-align: justify;
+  font-family: "Vazir";
 }
-.province-button{
+
+.province-button {
   float: right;
-    position: relative;
-    /* max-width: 54%; */
-    width: 50%;
-    display: block;
+  position: relative;
+  /* max-width: 54%; */
+  width: 50%;
+  display: block;
 }
-.province-button ul li{
+
+.province-button ul li {
   width: 33.3333333333333%;
   display: block;
   border-radius: 4px;
@@ -167,59 +232,66 @@ h1 {
   font-size: 11px;
   float: right;
 
-  /* width: 18%;
-  list-style: none;
-  display: inline-block;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  padding: 4px;
-  margin: 8px;
-  text-align: center;
-  font-size: 12px;
-  float: right; */
 }
-.province-button ul li a:hover{
+
+.province-button ul li a:hover {
   background: rgb(243, 138, 3);
   color: #fff;
 }
-.province-button ul li a{
+
+.province-button ul li a {
+  font-family: "Vazir";
   text-decoration: none;
-    color: #000;
-    display: block;
-    background: rgb(199, 215, 223);
-    border-bottom: 0;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  color: #000;
+  display: block;
+  background: rgb(199, 215, 223);
+  border-bottom: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
+
 @-webkit-keyframes ball-scale-ripple {
   0% {
     -webkit-transform: scale(0.1);
-            transform: scale(0.1);
-    opacity: 1; }
+    transform: scale(0.1);
+    opacity: 1;
+  }
+
   70% {
     -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 0.7; }
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
   100% {
-    opacity: 0.0; } }
+    opacity: 0.0;
+  }
+}
 
 @keyframes ball-scale-ripple {
   0% {
     -webkit-transform: scale(0.1);
-            transform: scale(0.1);
-    opacity: 1; }
+    transform: scale(0.1);
+    opacity: 1;
+  }
+
   70% {
     -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 0.7; }
-  100% {
-    opacity: 0.0; } }
+    transform: scale(1);
+    opacity: 0.7;
+  }
 
-.ball-scale-ripple > div {
+  100% {
+    opacity: 0.0;
+  }
+}
+
+.ball-scale-ripple>div {
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   height: 50px;
   width: 50px;
   border-radius: 100%;
   border: 2px solid #fff;
   -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
-          animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }
+  animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+}

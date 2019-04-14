@@ -17,4 +17,8 @@ jQuery(document).ready(function($){
             $('#agency-url-logo').val(image_url);
         });
     });
+
+    $(function() {
+        $('.imap-color-picker').wpColorPicker();
+    });
 });

@@ -12,55 +12,48 @@ function imap_settings_init(  ) {
 		'pluginPage'
 	);
 
-	// add_settings_field( 
-	// 	'imap_text_field_0', 
-	// 	__( 'Settings field description', 'imap' ), 
-	// 	'imap_text_field_0_render', 
-	// 	'pluginPage', 
-	// 	'imap_pluginPage_section' 
-	// );
-
-	// add_settings_field( 
-	// 	'imap_text_field_1', 
-	// 	__( 'Settings field description', 'imap' ), 
-	// 	'imap_text_field_1_render', 
-	// 	'pluginPage', 
-	// 	'imap_pluginPage_section' 
-	// );
+	add_settings_field( 
+		'imap_check_link', 
+		__( 'active links', 'imap' ), 
+		'imap_check_link_render', 
+		'pluginPage', 
+		'imap_pluginPage_section' 
+	);
 
 	add_settings_field( 
-		'imap_centeral_agency_name', 
+		'imap_centeral_agency', 
 		__( 'central agency', 'imap' ), 
 		'imap_centeral_agency_render', 
 		'pluginPage', 
 		'imap_pluginPage_section' 
 	);
 
-	// add_settings_field( 
-	// 	'imap_textarea_field_3', 
-	// 	__( 'Settings field description', 'imap' ), 
-	// 	'imap_textarea_field_3_render', 
-	// 	'pluginPage', 
-	// 	'imap_pluginPage_section' 
-	// );
+	add_settings_field( 
+		'imap_bg_color', 
+		__( 'Background color', 'imap' ), 
+		'imap_bg_color_render', 
+		'pluginPage', 
+		'imap_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'imap_bg_hover_color', 
+		__( 'Background color', 'imap' ), 
+		'imap_bg_hover_color_render', 
+		'pluginPage', 
+		'imap_pluginPage_section' 
+	);
+		
+
 }
 
-function imap_text_field_0_render(  ) { 
+function imap_check_link_render(  ) { 
 
 	$options = get_option( 'imap_settings' );
 	?>
-	<input type='text' name='imap_settings[imap_text_field_0]' value='<?php echo $options['imap_text_field_0']; ?>'>
+	<input type="checkbox" name="imap_settings[imap_check_link]" value="1"<?php checked( isset( $options['imap_check_link'] ) ); ?> />
+
 	<?php
-
-}
-
-function imap_text_field_1_render(  ) { 
-
-	$options = get_option( 'imap_settings' );
-	?>
-	<input type='text' name='imap_settings[imap_text_field_1]' value='<?php echo $options['imap_text_field_1']; ?>'>
-	<?php
-
 }
 
 function imap_centeral_agency_render(  ) { 
@@ -95,17 +88,28 @@ function imap_centeral_agency_render(  ) {
 
 }
 
-function imap_textarea_field_3_render(  ) { 
+function imap_bg_color_render(  ) { 
+
 
 	$options = get_option( 'imap_settings' );
+	if( !isset($options['imap_bg_color']) )
+	$options['imap_bg_color'] = '#c7d7df';
 	?>
-	<textarea cols='40' rows='5' name='imap_settings[imap_textarea_field_3]'> 
-		<?php echo $options['imap_textarea_field_3']; ?>
- 	</textarea>
+	<input type="text" name='imap_settings[imap_bg_color]' data-default-color="<?php echo $options['imap_bg_color']; ?>" class="imap-color-picker" value='<?php echo $options['imap_bg_color']; ?>'>
+	
 	<?php
-
 }
+function imap_bg_hover_color_render(  ) { 
 
+
+	$options = get_option( 'imap_settings' );
+	if( !isset($options['imap_bg_hover_color']) )
+	$options['imap_bg_hover_color'] = '#08da53';
+	?>
+	<input type="text" name='imap_settings[imap_bg_hover_color]' data-default-color="<?php echo $options['imap_bg_hover_color']; ?>" class="imap-color-picker" value='<?php echo $options['imap_bg_hover_color']; ?>'>
+	
+	<?php
+}
 
 function imap_settings_section_callback(  ) { 
 
@@ -135,4 +139,3 @@ function imap_options_page(  ) {
 	<?php
 
 }
-?>

@@ -2,6 +2,7 @@
   require_once plugin_dir_path(__FILE__) . 'imap_generate_agencies.php';
   
   function imap_diplay_shortcode( $atts ){
+    ob_start();
 ?>
 
 <script type="text/javascript">
@@ -133,6 +134,7 @@ jQuery(function ($) {
 </div>
 
 <?php
+return ob_get_clean();
  }
  add_shortcode( 'imap', 'imap_diplay_shortcode' );
  ?>

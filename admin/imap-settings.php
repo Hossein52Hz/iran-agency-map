@@ -30,7 +30,7 @@ function imap_settings_init(  ) {
 
 	add_settings_field( 
 		'imap_bg_color', 
-		__( 'Background color', 'imap' ), 
+		__( 'Background map color', 'imap' ), 
 		'imap_bg_color_render', 
 		'pluginPage', 
 		'imap_pluginPage_section' 
@@ -38,7 +38,7 @@ function imap_settings_init(  ) {
 
 	add_settings_field( 
 		'imap_bg_hover_color', 
-		__( 'Background color', 'imap' ), 
+		__( 'Hover map color', 'imap' ), 
 		'imap_bg_hover_color_render', 
 		'pluginPage', 
 		'imap_pluginPage_section' 

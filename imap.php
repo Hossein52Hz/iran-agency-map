@@ -58,17 +58,8 @@ register_activation_hook( __FILE__ , 'imap_agency_install');
    * add script and style of imap plugin
    */
   require_once plugin_dir_path( __FILE__ ) . 'includes/scripts.php';
-  function add_plugin_scripts() {
-    wp_enqueue_script( 'jquery3-js', plugins_url( 'public/js/jquery-3.1.1.min.js', __FILE__ ));
-    wp_enqueue_script( 'mousewheel-js', plugins_url( 'public/js/jquery.mousewheel-3.1.13.min.js', __FILE__ ));
-    wp_enqueue_script( 'raphael-js', plugins_url( 'public/js/raphael-2.2.7.min.js', __FILE__ ));
-    wp_enqueue_script( 'mapael-js', plugins_url( 'public/js/jquery.mapael.min.js', __FILE__ ));
-    wp_enqueue_script( 'iranmapael-js', plugins_url( 'public/js/iranmapael.js', __FILE__ ));
-
-     wp_enqueue_style( 'style', plugins_url( 'public/css/style.css', __FILE__ ) );
- 
-   }
-   add_action( 'wp_enqueue_scripts', 'add_plugin_scripts' );
+  add_action( 'wp_enqueue_scripts', 'add_plugin_scripts' );
+  
   /**
    * Imap front-end shortcut
    */

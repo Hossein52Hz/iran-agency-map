@@ -5,7 +5,8 @@
 ?>
 
 <script type="text/javascript">
-    $(function () {
+    // $(function () {
+jQuery(function ($) {
         $(".mapcontainer").mapael({
             map: {
                 // Set the name of the map to display
@@ -57,9 +58,8 @@
    
 </script>
 <script> 
-
-$(function () {
-
+jQuery(function ($) {
+    /* You can safely use $ in this code block to reference jQuery */
     var listOfProvinces = document.querySelector(".provinces-list");
         listOfProvinces.addEventListener("mouseover", e =>{
         var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
@@ -72,7 +72,7 @@ $(function () {
     pathColor.setAttribute("fill", "rgb(199, 215, 223)");
     });
 });
- 
+
 </script>
 
 <div class="container">

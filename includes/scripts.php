@@ -10,6 +10,8 @@ function new_agency_form_script($hook) {
   wp_enqueue_script('jquery');
   // This will enqueue the Media Uploader script
   wp_enqueue_media();
+  wp_enqueue_style( 'wp-color-picker' );
+  wp_enqueue_script( 'wp-color-picker');
   wp_enqueue_script( 'imap_custom_script', plugin_dir_url(__FILE__) . '../admin/js/custom-admin.js' );
   wp_enqueue_style( 'imap_setting_style', plugin_dir_url(__FILE__) . '../admin/css/imap-setting-page.css' );
 }
@@ -33,4 +35,3 @@ function add_plugin_scripts() {
   wp_enqueue_script( 'iranmapael-js', plugins_url( '../public/js/iranmapael.js', __FILE__ ));
   wp_enqueue_style( 'imap-style', plugins_url( '../public/css/imap-style.css', __FILE__ ) );
  }
-?>

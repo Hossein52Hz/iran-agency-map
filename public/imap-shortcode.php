@@ -3,6 +3,13 @@
   
   function imap_diplay_shortcode( $atts ){
     ob_start();
+
+    // set setting value
+    $options = get_option( 'imap_settings' );
+    $imap_background_color = $options['imap_bg_color'];
+    $imap_hover_color = $options['imap_bg_hover_color'];
+
+
 ?>
 
 <script type="text/javascript">
@@ -15,8 +22,11 @@ jQuery(function ($) {
                 defaultArea: {
                     attrs: {
                         stroke: "#fff",
-                        fill: "rgb(199, 215, 223)",
+                        fill: "<?php echo "$imap_background_color"; ?>",
                         "stroke-width": 0
+                    },
+                    attrsHover: {
+                        fill: "<?php echo "$imap_hover_color"; ?>"
                     },
                     eventHandlers: {
                         click: function (e, id, mapElem, textElem, elemOptions) {
@@ -43,7 +53,7 @@ jQuery(function ($) {
                     attrs: {
                         fill: "red",
                         stroke: "white",
-                        "stroke-width": 2,
+                        "stroke-width": 3,
                         opacity: 1,
                     },
                 }

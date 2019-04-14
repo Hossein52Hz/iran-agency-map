@@ -164,9 +164,9 @@
                 <option value="tehran"> <?php _e( 'tehran', 'imap' ); ?> </option>
                 <option value="yazd"> <?php _e( 'yazd', 'imap' ); ?> </option>
                 <option value="zanjan"> <?php _e( 'zanjan', 'imap' ); ?> </option>
-                <option value="caspian"> <?php _e( 'caspian', 'imap' ); ?> </option>
+                <!-- <option value="caspian"> <?php _e( 'caspian', 'imap' ); ?> </option>
                 <option value="persian-gulf"> <?php _e( 'persian-gulf', 'imap' ); ?> </option>
-                <option value="urmia"> <?php _e( 'urmia', 'imap' ); ?> </option>
+                <option value="urmia"> <?php _e( 'urmia', 'imap' ); ?> </option> -->
             </select>
                
             </td>

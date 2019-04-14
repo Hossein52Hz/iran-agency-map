@@ -79,13 +79,13 @@ jQuery(function ($) {
     var listOfProvinces = document.querySelector(".provinces-list");
         listOfProvinces.addEventListener("mouseover", e =>{
         var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
-        pathColor.setAttribute("fill", "rgb(243, 138, 3)");
+        pathColor.setAttribute("fill", "<?php echo "$imap_hover_color"; ?>");
     });
 
     // pathYouNeeded.style.fill='rgb(243, 138, 3)';
     listOfProvinces.addEventListener("mouseout", e =>{
     var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
-    pathColor.setAttribute("fill", "rgb(199, 215, 223)");
+    pathColor.setAttribute("fill", "<?php echo "$imap_background_color"; ?>");
     });
 });
 

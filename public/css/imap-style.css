@@ -9,55 +9,18 @@
     url('../fonts/vazir/Vazir.ttf') format('truetype');
 }
 
-/* *{
-  padding: 0;
-  margin: 0;
-}
-
-body {
-    color: #5d5d5d;
-    font-family: Helvetica, Arial, sans-serif;
-    width: 1200px;
-    margin: 0 auto;
-}
-
-h1 {
-    font-size: 30px;
-    margin: auto;
-    margin-top: 50px;
-} */
-
 .container {
   /* width: 100%; */
   margin: auto;
   clear: both;
 }
 
-/* .myText {
-  overflow: auto;
-  border-radius: 10px;
-  direction: rtl;
-  color:#000;
-  font-size: 16px;
-  padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  margin: 14px;
-  float: right;
-  margin-top: 40px;
-} */
-
-/* Specific mapael css class are below
-         * 'mapael' class is added by plugin
-        */
 .mapcontainer {
   padding: 50px 0;
   position: relative;
 }
 
 .mapael .map {
-  /* position: relative; */
-  /* float: left; */
-  /* width: 50%; */
   position: absolute;
 }
 
@@ -74,7 +37,6 @@ path:hover{
   background-color: #fff;
   opacity: 0.70;
   filter: alpha(opacity=70);
-  /* border-radius: 10px; */
   padding: 5px 10px;
   z-index: 1000;
   max-width: 200px;
@@ -235,7 +197,7 @@ path:hover{
 }
 
 .province-button ul li a:hover {
-  background: rgb(243, 138, 3);
+  background: #08da53;
   color: #fff;
 }
 

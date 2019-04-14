@@ -84,7 +84,7 @@ function imap_agency_install()
         ('bushehr', 'بوشهر', 640, 345),
         ('caspian', 'دریای خزر', 0, 0),
         ('chaharmahal-and-bakhtiari', 'چهارمحال و بختیاری', 480, 330),
-        ('east-azerbaijan', 'آذربایجان شرقی', 170, 80),
+        ('west-azerbaijan', 'آذربایجان غربی', 170, 80),
         ('fars', 'فارس', 620, 430),
         ('gilan', 'گیلان', 180, 280),
         ('golestan', 'گلستان', 185, 520),
@@ -109,7 +109,7 @@ function imap_agency_install()
         ('sistan-baluchestan', 'سیستان بلوچستان', 700, 850),
         ('south-khorasan', 'خراسان جنوبی', 440, 750),
         ('tehran', 'تهران', 270, 370),
-        ('west-azerbaijan', 'آذربایجان غربی', 130, 140),
+        ('east-azerbaijan', 'آذربایجان شرقی', 130, 140),
         ('yazd', 'یزد', 450, 570),
         ('zanjan', 'زنجان', 210, 220)"
         );

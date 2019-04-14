@@ -20,4 +20,3 @@ function imap_agency_admin_menu()
 }
 
 add_action('admin_menu', 'imap_agency_admin_menu');
-?>

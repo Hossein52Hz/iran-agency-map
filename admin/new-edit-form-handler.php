@@ -270,4 +270,3 @@
         if (empty($messages)) return true;
         return implode('<br />', $messages);
     }
-?>

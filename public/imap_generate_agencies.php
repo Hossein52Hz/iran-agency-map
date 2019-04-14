@@ -63,4 +63,3 @@ function imap_generate_link()
     }
     echo '}';
 }
-?>

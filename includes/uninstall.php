@@ -12,4 +12,3 @@ function imap_uninstall_plugin()
     $wpdb->query( "DROP TABLE IF EXISTS wp_imap" );
     $wpdb->query( "DROP TABLE IF EXISTS imap_province" );
 }
-?>

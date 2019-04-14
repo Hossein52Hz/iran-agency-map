@@ -71,4 +71,3 @@ register_activation_hook( __FILE__ , 'imap_agency_install');
    */
   require_once plugin_dir_path( __FILE__ ) . 'includes/uninstall.php';
   register_uninstall_hook(__FILE__, 'imap_uninstall_plugin');
-?>

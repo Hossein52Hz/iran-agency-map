@@ -52,7 +52,12 @@ jQuery(function ($) {
     <?php 
         imap_generate_plot();
         imap_generate_areas();
-        imap_generate_link();
+        $options = get_option( 'imap_settings' );
+        if( isset( $options['imap_check_link'] ) && isset( $options['imap_centeral_agency'] ) )
+        {
+            imap_generate_link();
+        }
+        
     ?>
         });
     });
@@ -137,4 +142,3 @@ jQuery(function ($) {
 return ob_get_clean();
  }
  add_shortcode( 'imap', 'imap_diplay_shortcode' );
- ?>

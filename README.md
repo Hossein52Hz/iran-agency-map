@@ -1,12 +1,14 @@
 === imap ===
-Contributors: hossein52hz
-Donate link: https://zarinp.al/@hossein52hz
-Author: Hossein Masoudi
-Tags: imap, agencies, iran map
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-imap enables you to display your agencies on the Iran's map.
+*   Contributors: hossein52hz
+*   Donate link: https://zarinp.al/@hossein52hz
+*   Author: Hossein Masoudi
+*   Tags: imap, agencies, iran map
+*   License: GPLv2 or later
+*   License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*   imap enables you to display your agencies on the Iran's map.
+
+<img src="http://wpro.ir/imap/wp-content/uploads/2019/04/imap-screenshot.png">
 
 == Description ==
 

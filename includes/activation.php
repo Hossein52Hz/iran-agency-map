@@ -84,7 +84,7 @@ function imap_agency_install()
         ('ardabil', 'اردبیل', 100, 210),
         ('isfahan', 'اصفهان', 395, 398),
         ('alborz', 'البرز', 240, 340),
-        ('ilam', 'ایلام', 395, 120),
+        ('ilam', 'ایلام', 385, 120),
         ('bushehr', 'بوشهر', 640, 345),
         ('tehran', 'تهران', 270, 370),
         ('chaharmahal-and-bakhtiari', 'چهارمحال و بختیاری', 480, 330),

@@ -75,26 +75,31 @@ jQuery(function ($) {
 </script>
 <script> 
 jQuery(function ($) {
-    /* You can safely use $ in this code block to reference jQuery */
+    
     var listOfProvinces = document.querySelector(".provinces-list");
         listOfProvinces.addEventListener("mouseover", e =>{
         var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
         pathColor.setAttribute("fill", "<?php echo "$imap_hover_color"; ?>");
     });
 
-    // pathYouNeeded.style.fill='rgb(243, 138, 3)';
+    
     listOfProvinces.addEventListener("mouseout", e =>{
     var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
     pathColor.setAttribute("fill", "<?php echo "$imap_background_color"; ?>");
     });
+
+// set color of buttons from setting page
+    $(".provinces-list li").children().css({"color": "#000", "background": "<?php echo "$imap_background_color"; ?>"});
+    $(".provinces-list li").children().hover(function() {
+      $(this).css({"color": "#fff", "background": "<?php echo "$imap_hover_color"; ?>"}).mouseout(function(){
+              $(this).css({"color": "#000", "background": "<?php echo "$imap_background_color"; ?>"});
+          });
+  });
 });
 
 </script>
 
 <div class="container">
-
-    <!-- <h1>Iran simple svg Map</h1> -->
-
     <div class="mapcontainer">
         <div class="map"></div>
         <div class="province-button">

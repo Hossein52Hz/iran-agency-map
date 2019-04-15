@@ -6,8 +6,15 @@
 
     // set setting value
     $options = get_option( 'imap_settings' );
-    $imap_background_color = $options['imap_bg_color'];
-    $imap_hover_color = $options['imap_bg_hover_color'];
+    if( isset( $options['imap_bg_color']) ){
+        $imap_background_color = $options['imap_bg_color'];
+    }
+    else $imap_background_color = '#c7d7df';
+
+    if( isset( $options['imap_bg_hover_color']) ){
+        $imap_hover_color = $options['imap_bg_hover_color'];
+    }
+    else $imap_hover_color = '#08da53';
 
 
 ?>

@@ -83,14 +83,18 @@ jQuery(function ($) {
 <script> 
 jQuery(function ($) {
     
+    //action when mouse hover on province Items and map sections
     var listOfProvinces = document.querySelector(".provinces-list");
+    var provinceTooltip = document.querySelector(".mapTooltip");
         listOfProvinces.addEventListener("mouseover", e =>{
+        provinceTooltip.style.visibility = "hidden";
         var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
         pathColor.setAttribute("fill", "<?php echo "$imap_hover_color"; ?>");
     });
 
     
     listOfProvinces.addEventListener("mouseout", e =>{
+    provinceTooltip.style.visibility = "unset";
     var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
     pathColor.setAttribute("fill", "<?php echo "$imap_background_color"; ?>");
     });
@@ -106,7 +110,7 @@ jQuery(function ($) {
 
 </script>
 
-<div class="container">
+<div class="imap-section">
     <div class="mapcontainer">
         <div class="map"></div>
         <div class="province-button">
@@ -148,7 +152,7 @@ jQuery(function ($) {
     </div>
 
 </div>
-<div class="container">
+<div class="imap-section clear">
     <div class="Agencies">
         <div class="aboutus" style="line-height: 30px;">
         <p><?php _e( 'Click on every agency to display information of every agency.', 'imap') ?></p>

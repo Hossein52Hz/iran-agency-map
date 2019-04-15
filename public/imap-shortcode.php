@@ -99,37 +99,37 @@ jQuery(function ($) {
         <div class="map"></div>
         <div class="province-button">
             <ul class="provinces-list">
-                <li id="alborz">                    <a href="#" id="alborz">                      <?php _e( 'alborz', 'imap' ); ?> </a> </li>
-                <li id="ardabil">                   <a href="#" id="ardabil">                     <?php _e('ardabil', 'imap'); ?> </a></li>
-                <li id="east-azerbaijan">           <a href="#" id="east-azerbaijan">             <?php _e('east-azerbaijan', 'imap'); ?> </a></li>
-                <li id="west-azerbaijan">           <a href="#" id="west-azerbaijan">             <?php _e('west-azerbaijan', 'imap'); ?> </a></li>
-                <li id="bushehr">                   <a href="#" id="bushehr">                     <?php _e('bushehr', 'imap'); ?> </a></li>
-                <li id="chaharmahal-and-bakhtiari"> <a href="#" id="chaharmahal-and-bakhtiari">   <?php _e('chaharmahal-and-bakhtiari', 'imap'); ?> </a></li>
-                <li id="fars">                      <a href="#" id="fars">                        <?php _e('fars', 'imap'); ?> </a></li>
-                <li id="gilan">                     <a href="#" id="gilan">                       <?php _e('gilan', 'imap'); ?> </a></li>
-                <li id="golestan">                  <a href="#" id="golestan">                    <?php _e('golestan', 'imap'); ?> </a></li>
-                <li id="hamadan">                   <a href="#" id="hamadan">                     <?php _e('hamadan', 'imap'); ?> </a></li>
-                <li id="hormozgan">                 <a href="#" id="hormozgan">                   <?php _e('hormozgan', 'imap'); ?> </a></li>
-                <li id="ilam">                      <a href="#" id="ilam">                        <?php _e('ilam', 'imap'); ?> </a></li>
-                <li id="isfahan">                   <a href="#" id="isfahan">                     <?php _e('isfahan', 'imap'); ?> </a></li>
-                <li id="kerman">                    <a href="#" id="kerman">                      <?php _e('kerman', 'imap'); ?> </a></li>
-                <li id="kermanshah">                <a href="#" id="kermanshah">                  <?php _e('kermanshah', 'imap'); ?> </a></li>
-                <li id="north-khorasan">            <a href="#" id="north-khorasan">              <?php _e('north-khorasan', 'imap'); ?> </a></li>
-                <li id="khorasan-razavi">           <a href="#" id="khorasan-razavi">             <?php _e('khorasan-razavi', 'imap'); ?> </a></li>
-                <li id="south-khorasan">            <a href="#" id="south-khorasan">              <?php _e('south-khorasan', 'imap'); ?> </a></li>
-                <li id="khuzestan">                 <a href="#" id="khuzestan">                   <?php _e('khuzestan', 'imap'); ?> </a></li>
-                <li id="kohgiluyeh-and-boyer-ahmad"><a href="#" id="kohgiluyeh-and-boyer-ahmad">  <?php _e('kohgiluyeh-and-boyer-ahmad', 'imap'); ?> </a></li>
-                <li id="kurdistan">                 <a href="#" id="kurdistan">                   <?php _e('kurdistan', 'imap'); ?> </a></li>
-                <li id="lorestan">                  <a href="#" id="lorestan">                    <?php _e('lorestan', 'imap'); ?> </a></li>
-                <li id="markazi">                   <a href="#" id="markazi">                     <?php _e('markazi', 'imap'); ?> </a></li>
-                <li id="mazandaran">                <a href="#" id="mazandaran">                  <?php _e('mazandaran', 'imap'); ?> </a></li>
-                <li id="qazvin">                    <a href="#" id="qazvin">                      <?php _e('qazvin', 'imap'); ?> </a></li>
-                <li id="qom">                       <a href="#" id="qom">                         <?php _e('qom', 'imap'); ?> </a></li>
-                <li id="semnan">                    <a href="#" id="semnan">                      <?php _e('semnan', 'imap'); ?> </a></li>
-                <li id="sistan-baluchestan">        <a href="#" id="sistan-baluchestan">          <?php _e('sistan-baluchestan', 'imap'); ?> </a></li>
-                <li id="tehran">                    <a href="#" id="tehran">                      <?php _e('tehran', 'imap'); ?> </a></li>
-                <li id="yazd">                      <a href="#" id="yazd">                        <?php _e('yazd', 'imap'); ?> </a></li>
-                <li id="zanjan">                    <a href="#" id="zanjan">                      <?php _e('zanjan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="alborz" id="alborz">                    <a href="#" id="alborz">                      <?php _e( 'alborz', 'imap' ); ?> </a> </li>
+                <li data-type="area" data-id="ardabil" id="ardabil">                   <a href="#" id="ardabil">                     <?php _e('ardabil', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="east-azerbaijan" id="east-azerbaijan">           <a href="#" id="east-azerbaijan">             <?php _e('east-azerbaijan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="west-azerbaijan" id="west-azerbaijan">           <a href="#" id="west-azerbaijan">             <?php _e('west-azerbaijan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="bushehr" id="bushehr">                   <a href="#" id="bushehr">                     <?php _e('bushehr', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="chaharmahal-and-bakhtiari" id="chaharmahal-and-bakhtiari"> <a href="#" id="chaharmahal-and-bakhtiari">   <?php _e('chaharmahal-and-bakhtiari', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="fars" id="fars">                      <a href="#" id="fars">                        <?php _e('fars', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="gilan" id="gilan">                     <a href="#" id="gilan">                       <?php _e('gilan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="golestan" id="golestan">                  <a href="#" id="golestan">                    <?php _e('golestan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="hamadan" id="hamadan">                   <a href="#" id="hamadan">                     <?php _e('hamadan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="hormozgan" id="hormozgan">                 <a href="#" id="hormozgan">                   <?php _e('hormozgan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="ilam" id="ilam">                      <a href="#" id="ilam">                        <?php _e('ilam', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="isfahan" id="isfahan">                   <a href="#" id="isfahan">                     <?php _e('isfahan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="kerman" id="kerman">                    <a href="#" id="kerman">                      <?php _e('kerman', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="kermanshah" id="kermanshah">                <a href="#" id="kermanshah">                  <?php _e('kermanshah', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="north-khorasan" id="north-khorasan">            <a href="#" id="north-khorasan">              <?php _e('north-khorasan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="khorasan-razavi" id="khorasan-razavi">           <a href="#" id="khorasan-razavi">             <?php _e('khorasan-razavi', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="south-khorasan" id="south-khorasan">            <a href="#" id="south-khorasan">              <?php _e('south-khorasan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="khuzestan" id="khuzestan">                 <a href="#" id="khuzestan">                   <?php _e('khuzestan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="kohgiluyeh-and-boyer-ahmad" id="kohgiluyeh-and-boyer-ahmad"><a href="#" id="kohgiluyeh-and-boyer-ahmad">  <?php _e('kohgiluyeh-and-boyer-ahmad', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="kurdistan" id="kurdistan">                 <a href="#" id="kurdistan">                   <?php _e('kurdistan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="lorestan" id="lorestan">                  <a href="#" id="lorestan">                    <?php _e('lorestan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="markazi" id="markazi">                   <a href="#" id="markazi">                     <?php _e('markazi', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="mazandaran" id="mazandaran">                <a href="#" id="mazandaran">                  <?php _e('mazandaran', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="qazvin" id="qazvin">                    <a href="#" id="qazvin">                      <?php _e('qazvin', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="qom" id="qom">                       <a href="#" id="qom">                         <?php _e('qom', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="semnan" id="semnan">                    <a href="#" id="semnan">                      <?php _e('semnan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="sistan-baluchestan" id="sistan-baluchestan">        <a href="#" id="sistan-baluchestan">          <?php _e('sistan-baluchestan', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="tehran" id="tehran">                    <a href="#" id="tehran">                      <?php _e('tehran', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="yazd" id="yazd">                      <a href="#" id="yazd">                        <?php _e('yazd', 'imap'); ?> </a></li>
+                <li data-type="area" data-id="zanjan" id="zanjan">                    <a href="#" id="zanjan">                      <?php _e('zanjan', 'imap'); ?> </a></li>
 
 
             </ul>

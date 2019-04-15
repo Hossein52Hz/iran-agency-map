@@ -152,7 +152,7 @@ jQuery(function ($) {
     </div>
 
 </div>
-<div class="imap-section clear">
+<div class="imap-section imap-clear">
     <div class="Agencies">
         <div class="aboutus" style="line-height: 30px;">
         <p><?php _e( 'Click on every agency to display information of every agency.', 'imap') ?></p>

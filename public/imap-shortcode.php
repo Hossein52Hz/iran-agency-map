@@ -151,7 +151,7 @@ jQuery(function ($) {
 <div class="container">
     <div class="Agencies">
         <div class="aboutus" style="line-height: 30px;">
-        <p>جهت مشاهده نمایندگان هر استان روی نام استان کلیک کنید.</p>
+        <p><?php _e( 'Click on every agency to display information of every agency.', 'imap') ?></p>
 
 
         </div>

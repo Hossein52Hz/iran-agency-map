@@ -9,29 +9,34 @@
     url('../fonts/vazir/Vazir.ttf') format('truetype');
 }
 
-.container {
-  /* width: 100%; */
-  margin: auto;
+.imap-section * {
+  box-sizing: border-box;
+}
+
+.clear {
   clear: both;
 }
 
-.mapcontainer {
-  padding: 50px 0;
+.map {
+  float: left;
+  width: 50%;
   position: relative;
 }
 
-.mapael .map {
-  position: absolute;
+.province-button {
+  float: left;
+  width: 50%;
 }
 
-.mapael .map svg {
-  width: 50%;
-  height: auto;
-  float: left;
+.provinces-list {
+  padding: 0%;
+  margin: 0%;
 }
-path:hover{
+
+path:hover {
   cursor: pointer;
 }
+
 .mapael .mapTooltip {
   position: absolute;
   background-color: #fff;
@@ -45,13 +50,11 @@ path:hover{
   color: #343434;
 }
 
-
 /* branch section */
 .aboutus {
   overflow: auto;
   border-radius: 10px;
   direction: rtl;
-  /* font-size: 16px; */
   padding: 10px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   width: 100%;
@@ -121,22 +124,27 @@ path:hover{
   font-family: "Vazir";
   list-style: none;
 }
-.contact ul li i{
+
+.contact ul li i {
   width: 16px;
   height: 16px;
   margin-left: 6px;
   display: inline-flex;
 }
-.profile-icon{
+
+.profile-icon {
   background: url(../img/imap-user.png);
 }
-.address-icon{
+
+.address-icon {
   background: url(../img/imap-address.png);
 }
-.tell-icon{
+
+.tell-icon {
   background: url(../img/imap-phone.png);
 }
-.mobile-icon{
+
+.mobile-icon {
   background: url(../img/imap-mobile.png);
 }
 
@@ -211,49 +219,16 @@ path:hover{
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
-@-webkit-keyframes ball-scale-ripple {
-  0% {
-    -webkit-transform: scale(0.1);
-    transform: scale(0.1);
-    opacity: 1;
-  }
-
-  70% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0.7;
-  }
-
-  100% {
-    opacity: 0.0;
-  }
+.provinces-list li:hover~.mapTooltip {
+  display: none;
 }
 
-@keyframes ball-scale-ripple {
-  0% {
-    -webkit-transform: scale(0.1);
-    transform: scale(0.1);
-    opacity: 1;
-  }
+@media only screen and (max-width:620px) {
 
-  70% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0.7;
+  /* For mobile phones: */
+  .map,
+  .province-button,
+  .Agencies {
+    width: 100%;
   }
-
-  100% {
-    opacity: 0.0;
-  }
-}
-
-.ball-scale-ripple>div {
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  border: 2px solid #fff;
-  -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
-  animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
 }

@@ -15,10 +15,10 @@ if (!class_exists('WP_List_Table')) {
 }
 
 /**
-    * imap_agency_List_Table class that will display our custom table
+    * iran_agency_map_List_Table class that will display our custom table
     * records in nice table
     */
-class imap_agency_List_Table extends WP_List_Table
+class iran_agency_map_List_Table extends WP_List_Table
 {
     /**
         * [REQUIRED] You must declare constructor and give some basic params
@@ -53,7 +53,7 @@ class imap_agency_List_Table extends WP_List_Table
         * @param $item - row (key, value array)
         * @return HTML
         */
-    // function column_agency_province_name($item)
+    // function column_iran_agency_map_province_name($item)
     // {
     //     return '<em>' . $item['agency_province_name'] . '</em>';
     // }
@@ -72,8 +72,8 @@ class imap_agency_List_Table extends WP_List_Table
         // also notice how we use $this->_args['singular'] so in this example it will
         // be something like &agency=2
         // $actions = array(
-        //     'edit' => sprintf('<a href="?page=agencies_form&id=%s">%s</a>', $item['id'], __('Edit', 'imap')),
-        //     'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'imap')),
+        //     'edit' => sprintf('<a href="?page=agencies_form&id=%s">%s</a>', $item['id'], __('Edit', 'iran-agency-map' )),
+        //     'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'iran-agency-map' )),
         // );
 
         // return sprintf('%s %s',
@@ -84,8 +84,8 @@ class imap_agency_List_Table extends WP_List_Table
 
     function column_agency_province_name($item) {
         $actions = array(
-            'edit' => sprintf('<a href="?page=agencies_form&id=%s">%s</a>', $item['id'], __('Edit', 'imap')),
-            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'imap')),
+            'edit' => sprintf('<a href="?page=agencies_form&id=%s">%s</a>', $item['id'], __('Edit', 'iran-agency-map' )),
+            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'iran-agency-map' )),
         );
 
         return sprintf('%s %s',
@@ -119,14 +119,14 @@ class imap_agency_List_Table extends WP_List_Table
     {
         $columns = array(
             'cb' => '<input type="checkbox" />', //Render a checkbox instead of text
-            'agency_province_name' => __('agency_province_name', 'imap'),
-            'agency_city_name' =>   __('agency_city_name', 'imap'),
-            'agency_name' =>    __('agency_name', 'imap'),
-            'agency_full_name' =>   __('agency_full_name', 'imap'),
-            'agency_tell' =>    __('agency_tell', 'imap'),
-            'agency_mobile' =>  __('agency_mobile', 'imap'),
-            'agency_address' => __('agency_address', 'imap'),
-            // 'agency_url_logo' =>    __('agency_url_logo', 'imap'),
+            'agency_province_name' => __('agency_province_name', 'iran-agency-map' ),
+            'agency_city_name' =>   __('agency_city_name', 'iran-agency-map' ),
+            'agency_name' =>    __('agency_name', 'iran-agency-map' ),
+            'agency_full_name' =>   __('agency_full_name', 'iran-agency-map' ),
+            'agency_tell' =>    __('agency_tell', 'iran-agency-map' ),
+            'agency_mobile' =>  __('agency_mobile', 'iran-agency-map' ),
+            'agency_address' => __('agency_address', 'iran-agency-map' ),
+            // 'agency_url_logo' =>    __('agency_url_logo', 'iran-agency-map' ),
         );
         return $columns;
     }

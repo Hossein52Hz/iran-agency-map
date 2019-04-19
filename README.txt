@@ -1,15 +1,15 @@
-=== imap ===
+=== Iran agency map ===
 Contributors: hossein52hz
 Donate link: https://zarinp.al/@hossein52hz
 Author: Hossein Masoudi
-Tags: imap, agencies, iran map
+Tags: Iran agency map, agencies, iran map
 Requires at least: 5.1
 Tested up to: 5.1.1
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-imap enables you to display your agencies on the Iran's map.
+Iran agency map enables you to display your agencies on the Iran's map.
 
 == Description ==
 
@@ -23,7 +23,7 @@ It's light and customizeable. You can add many agencies. and Connect them to the
 *   Donate Us [By Zarinpal](https://zarinp.al/@hossein52hz).
 
 = Translations =
-imap has been translated into the following languages:
+Iran agency map has been translated into the following languages:
 
 *   English (United States)
 *   Persian (Iran)
@@ -40,14 +40,14 @@ Want to add a new language to WP ULike? Well! You can contribute via [translate.
 = From your WordPress dashboard =
 
 1. Visit 'Plugins > Add New'
-2. Search for 'imap'
-3. Activate 'imap' from your Plugins page.
+2. Search for 'Iran agency map'
+3. Activate 'Iran agency map' from your Plugins page.
 
 = From WordPress.org =
 
-1. Download 'imap'.
-2. Upload the 'imap' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
-3. Activate 'imap' from your Plugins page.
+1. Download 'Iran agency map'.
+2. Upload the 'Iran agency map' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+3. Activate 'Iran agency map' from your Plugins page.
 
 == Screenshots ==
 
@@ -62,7 +62,7 @@ step1: Install the plugin and activate it.
 Step2: You can use of the following shortcode for your Pages:
 
 *   Shortcode:
-`[imap]`
+`[iran-agency-map]`
 
 == Changelog ==
 

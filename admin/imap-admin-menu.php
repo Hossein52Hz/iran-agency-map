@@ -11,12 +11,12 @@
 /**
     * admin_menu hook implementation, will add pages to list agencies and to add new one
     */
-function imap_agency_admin_menu()
+function iran_agency_map_admin_menu()
 {
-    add_menu_page(__('agencies', 'imap'), __('agencies', 'imap'), 'activate_plugins', 'agencies', 'imap_agency_agencies_page_handler');
-    add_submenu_page('agencies', __('agencies', 'imap'), __('agencies', 'imap'), 'activate_plugins', 'agencies', 'imap_agency_agencies_page_handler');
-    add_submenu_page('agencies', __('Add new', 'imap'), __('Add new', 'imap'), 'activate_plugins', 'agencies_form', 'imap_agency_form_page_handler');
-    add_submenu_page('agencies', __('Settings', 'imap'), __('Settings', 'imap'), 'manage_options', 'agencies_setting', 'imap_options_page' );
+    add_menu_page(__('agencies', 'iran-agency-map' ), __('agencies', 'iran-agency-map' ), 'activate_plugins', 'agencies', 'iran_agency_map_agencies_page_handler');
+    add_submenu_page('agencies', __('agencies', 'iran-agency-map' ), __('agencies', 'iran-agency-map' ), 'activate_plugins', 'agencies', 'iran_agency_map_agencies_page_handler');
+    add_submenu_page('agencies', __('Add new', 'iran-agency-map' ), __('Add new', 'iran-agency-map' ), 'activate_plugins', 'agencies_form', 'iran_agency_map_form_page_handler');
+    add_submenu_page('agencies', __('Settings', 'iran-agency-map' ), __('Settings', 'iran-agency-map' ), 'manage_options', 'agencies_setting', 'iran_agency_map_options_page' );
 }
 
-add_action('admin_menu', 'imap_agency_admin_menu');
+add_action('admin_menu', 'iran_agency_map_admin_menu');

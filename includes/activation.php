@@ -78,7 +78,7 @@ function iran_agency_map_agency_install()
     dbDelta($iran_agency_map_create_table);  
 
 
-    if( $wpdb->get_var( "SHOW TABLES LIKE 'wp_imap_province'" ) != 'wp_imap_province' && $wpdb->get_var( "SELECT * FROM 'wp_imap_province'" ) != '0') {
+    if( $wpdb->get_var( "SHOW TABLES LIKE 'wp_imap_province'" ) != 'wp_imap_province' || $wpdb->get_var( "SELECT COUNT(province_en_name) FROM wp_imap_province ")==0 ) {
         $iran_agency_map_insert_province_data = $wpdb->query("
         INSERT INTO wp_imap_province (province_en_name, province_fa_name, position_x, position_y) VALUES
         ('east-azerbaijan', 'آذربایجان شرقی', 130, 140),

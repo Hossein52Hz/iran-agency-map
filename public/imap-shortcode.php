@@ -1,5 +1,5 @@
 <?php
-  require_once plugin_dir_path(__FILE__) . 'imap-generate-agencies.php';
+  require_once plugin_dir_path(__FILE__) . 'generate-agencies.php';
   
   function iran_agency_map_display_shortcode( $atts ){
     ob_start();
@@ -156,7 +156,6 @@ jQuery(function ($) {
     <div class="Agencies">
         <div class="aboutus" style="line-height: 30px;">
         <p><?php _e( 'Click on every agency to display information of every agency.', 'iran-agency-map' ) ?></p>
-
 
         </div>
     </div>

@@ -19,16 +19,14 @@ It's light and customizeable. You can add many agencies. and Connect them to the
 = More Information =
 
 *   See Online [Demo](http://wpro.ir/imap/?page_id=12).
-*   Fork Us In [Github](https://github.com/Hossein52Hz/imap).
+*   Fork Us In [Github](https://github.com/Hossein52Hz/iran-agency-map).
 *   Donate Us [By Zarinpal](https://zarinp.al/@hossein52hz).
 
 = Translations =
 Iran agency map has been translated into the following languages:
 
-*   English (United States)
 *   Persian (Iran)
 
-Want to add a new language to WP ULike? Well! You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/wp-ulike).
 
 = About Author =
 

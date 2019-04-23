@@ -16,8 +16,8 @@ function iran_agency_map_agency_install()
 {
     global $wpdb;
     global $iran_agency_map_db_version;
-    $province_info = $wpdb->prefix . 'imap_province';
-    $agencies_info = $wpdb->prefix . 'imap';
+    $province_info = $wpdb->prefix . 'iam_province_info';
+    $agencies_info = $wpdb->prefix . 'iam_agencies_info';
 
     // sql to create your table
     // NOTICE that:

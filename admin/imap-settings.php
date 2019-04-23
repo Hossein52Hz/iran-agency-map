@@ -59,9 +59,9 @@ function iran_agency_map_check_link_render(  ) {
 function iran_agency_map_centeral_agency_render(  ) { 
 
 	$options = get_option( 'iran_agency_map_settings' );
-	// $province_info = $wpdb->prefix . 'imap_province';
-    $agencies_info = $wpdb->prefix . 'imap';
+	// $province_info = $wpdb->prefix . 'iam_province_info';
 	global $wpdb;
+    $agencies_info = $wpdb->prefix . 'iam_agencies_info';
     $central_agency_result = $wpdb->get_results( " SELECT DISTINCT agency_province_name FROM " . $agencies_info . " " );
 
 	?>

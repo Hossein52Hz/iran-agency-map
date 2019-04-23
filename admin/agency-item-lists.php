@@ -176,7 +176,7 @@ class iran_agency_map_List_Table extends WP_List_Table
     function process_bulk_action()
     {
         global $wpdb;
-        $agencies_info = $wpdb->prefix . 'imap'; // do not forget about tables prefix
+        $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
 
         if ('delete' === $this->current_action()) {
             $ids = isset($_REQUEST['id']) ? $_REQUEST['id'] : array();
@@ -197,7 +197,7 @@ class iran_agency_map_List_Table extends WP_List_Table
     {
         global $wpdb;
         
-        $agencies_info = $wpdb->prefix . 'imap'; // do not forget about tables prefix
+        $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
 
         $per_page = 20; // constant, how much records will be shown per page
 

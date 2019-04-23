@@ -19,7 +19,7 @@
     function iran_agency_map_form_page_handler()
     {
         global $wpdb;
-        $agencies_info = $wpdb->prefix . 'imap'; // do not forget about tables prefix
+        $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
     
         $message = '';
         $notice = '';

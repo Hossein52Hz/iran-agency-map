@@ -7,8 +7,9 @@ function iran_agency_map_uninstall()
     // }
     delete_option('iran_agency_map_db_version'); 
     delete_option('iran_agency_map_settings');
-    
+    $province_info = $wpdb->prefix . 'imap_province';
+    $agencies_info = $wpdb->prefix . 'imap';
     global $wpdb;
-    $wpdb->query( "DROP TABLE IF EXISTS wp_imap" );
-    $wpdb->query( "DROP TABLE IF EXISTS imap_province" );
+    $wpdb->query( "DROP TABLE IF EXISTS '" . $agencies_info ."' ");
+    $wpdb->query( "DROP TABLE IF EXISTS '" . $province_info ."' ");
 }

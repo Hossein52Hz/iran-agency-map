@@ -19,7 +19,7 @@
     function iran_agency_map_form_page_handler()
     {
         global $wpdb;
-        $table_name = $wpdb->prefix . 'imap'; // do not forget about tables prefix
+        $agencies_info = $wpdb->prefix . 'imap'; // do not forget about tables prefix
     
         $message = '';
         $notice = '';
@@ -46,7 +46,7 @@
             $item_valid = iran_agency_map_agency_validate_agency($item);
             if ($item_valid === true) {
                 if ($item['id'] == 0) {
-                    $result = $wpdb->insert($table_name, $item);
+                    $result = $wpdb->insert($agencies_info, $item);
                     $item['id'] = $wpdb->insert_id;
                     if ($result) {
                         $message = __('Item was successfully saved', 'iran-agency-map' );
@@ -54,7 +54,7 @@
                         $notice = __('There was an error while saving item', 'iran-agency-map' );
                     }
                 } else {
-                    $result = $wpdb->update($table_name, $item, array('id' => $item['id']));
+                    $result = $wpdb->update($agencies_info, $item, array('id' => $item['id']));
                     if ($result) {
                         $message = __('Item was successfully updated', 'iran-agency-map' );
                     } else {
@@ -70,7 +70,7 @@
             // if this is not post back we load item to edit or give new one to create
             $item = $default;
             if (isset($_REQUEST['id'])) {
-                $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE id = %d", $_REQUEST['id']), ARRAY_A);
+                $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $agencies_info WHERE id = %d", $_REQUEST['id']), ARRAY_A);
                 if (!$item) {
                     $item = $default;
                     $notice = __('Item not found', 'iran-agency-map' );

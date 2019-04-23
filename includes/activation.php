@@ -1,27 +1,10 @@
 <?php
 /**
-    * PART 1. Defining Custom Database Table
-    * ============================================================================
-    *
-    * In this part you are going to define custom database table,
-    * create it, update, and fill with some dummy data
-    *
-    * http://codex.wordpress.org/Creating_Tables_with_Plugins
-    *
-    * In case your are developing and want to check plugin use:
-    *
-    * DROP TABLE IF EXISTS wp_cte;
-    * DELETE FROM wp_options WHERE option_name = 'imap_agency_install_data';
-    *
-    * to drop table and option
-    */
-
-/**
     * $iran_agency_map_db_version - holds current database version
     * and used on plugin update to sync database tables
     */
 global $iran_agency_map_db_version;
-$iran_agency_map_db_version = '1.0.0'; // version changed from 1.0 to 1.1
+$iran_agency_map_db_version = '1.0.0';
 
 /**
     * register_activation_hook implementation
@@ -33,8 +16,8 @@ function iran_agency_map_agency_install()
 {
     global $wpdb;
     global $iran_agency_map_db_version;
-
-    $table_name = $wpdb->prefix . 'imap';
+    $province_info = $wpdb->prefix . 'imap_province';
+    $agencies_info = $wpdb->prefix . 'imap';
 
     // sql to create your table
     // NOTICE that:
@@ -43,44 +26,46 @@ function iran_agency_map_agency_install()
     //    Like this: PRIMARY KEY[space][space](id)
     // otherwise dbDelta will not work
     // --
-    // -- Table structure for table wp_imap
+    // -- Table structure for table province_info
     // --
-    $iran_agency_map_create_imap_table = "CREATE TABLE " . $table_name . " (
-        id int(11) NOT NULL AUTO_INCREMENT,
-        agency_province_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-        agency_city_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-        agency_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-        agency_full_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-        agency_tell bigint(20) NOT NULL,
-        agency_mobile bigint(20) NOT NULL,
-        agency_address longtext COLLATE utf8_unicode_ci NOT NULL,
-        agency_url_logo varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-        PRIMARY KEY  (id)
-    )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-
-    // we do not execute sql directly
-    // we are calling dbDelta which cant migrate database
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($iran_agency_map_create_imap_table);
-
-    // --
-    // -- Table structure for table wp_imap_province
-    // --
-    $iran_agency_map_province_table_name = $wpdb->prefix . 'imap_province';
-    $iran_agency_map_create_table = "CREATE TABLE " . $iran_agency_map_province_table_name . " (
-      province_en_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-      province_fa_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-      position_x int(11) NOT NULL,
-      position_y int(11) NOT NULL
-    )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
     
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    dbDelta($iran_agency_map_create_table);  
+    if( $wpdb->get_var("SHOW TABLES LIKE '$province_info'") != $province_info )
+    {
+        $iran_agency_map_table = "CREATE TABLE " . $province_info . " (
+            province_en_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            province_fa_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            position_x int(11) NOT NULL,
+            position_y int(11) NOT NULL,
+            PRIMARY KEY  (province_en_name)
+          )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+        
+          require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+          dbDelta($iran_agency_map_table);  
+    }
 
+    // --
+    // -- Table structure for table agencies_info
+    // --
+    if( $wpdb->get_var("SHOW TABLES LIKE '$agencies_info'") != $agencies_info )
+    {
+        $iran_agency_map_create_imap_table = "CREATE TABLE " . $agencies_info . " (
+            id int(11) NOT NULL AUTO_INCREMENT,
+            agency_province_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            agency_city_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            agency_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            agency_full_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            agency_tell bigint(20) NOT NULL,
+            agency_mobile bigint(20) NOT NULL,
+            agency_address longtext COLLATE utf8_unicode_ci NOT NULL,
+            agency_url_logo varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+            PRIMARY KEY  (id),
+            FOREIGN KEY (agency_province_name) REFERENCES " .$province_info . "(province_en_name)
+        )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-    if( $wpdb->get_var( "SHOW TABLES LIKE 'wp_imap_province'" ) != 'wp_imap_province' || $wpdb->get_var( "SELECT COUNT(province_en_name) FROM wp_imap_province ")==0 ) {
-        $iran_agency_map_insert_province_data = $wpdb->query("
-        INSERT INTO wp_imap_province (province_en_name, province_fa_name, position_x, position_y) VALUES
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($iran_agency_map_create_imap_table);
+
+        $iran_agency_map_insert_province_data = $wpdb->query("INSERT INTO `".$province_info."` (province_en_name, province_fa_name, position_x, position_y) VALUES
         ('east-azerbaijan', 'آذربایجان شرقی', 130, 140),
         ('west-azerbaijan', 'آذربایجان غربی', 170, 80),
         ('ardabil', 'اردبیل', 100, 210),
@@ -117,70 +102,9 @@ function iran_agency_map_agency_install()
         );
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($iran_agency_map_insert_province_data);
-    }
-    if($wpdb->get_var( "SHOW TABLES LIKE 'wp_imap_province'" ) != 'wp_imap_province') {
-        // -- Indexes for table wp_imap
-        $iran_agency_map_set_foreign_key = $wpdb->query(" ALTER TABLE wp_imap ADD KEY agency_province_name (agency_province_name) ");
-        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-        dbDelta($iran_agency_map_set_foreign_key);
         
-        // -- Indexes for table wp_imap_province
-        $iran_agency_map_set_primary_key = $wpdb->query(" ALTER TABLE wp_imap_province ADD PRIMARY KEY (province_en_name) ");
-        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-        dbDelta($iran_agency_map_set_primary_key);
     }
-
 
     // save current database version for later use (on upgrade)
     add_option('iran_agency_map_db_version', $iran_agency_map_db_version);
-
-    /**
-        * [OPTIONAL] Example of updating to 1.1 version
-        *
-        * If you develop new version of plugin
-        * just increment $iran_agency_map_db_version variable
-        * and add following block of code
-        *
-        * must be repeated for each new version
-        * in version 1.1 we change email field
-        * to contain 200 chars rather 100 in version 1.0
-        * and again we are not executing sql
-        * we are using dbDelta to migrate table changes
-        */
-    // $installed_ver = get_option('iran_agency_map_db_version');
-    // if ($installed_ver != $iran_agency_map_db_version) {
-    //     $sql = "CREATE TABLE " . $table_name . " (
-    //         id int(11) NOT NULL AUTO_INCREMENT,
-    //         agency_province_name VARCHAR(100) NOT NULL,
-    //         agency_city_name VARCHAR(100) NOT NULL,
-    //         agency_name VARCHAR(100) NOT NULL,
-    //         agency_full_name VARCHAR(100) NOT NULL,
-    //         agency_tell bigint(20) NOT NULL,
-    //         agency_mobile bigint(20) NOT NULL,
-    //         agency_address longtext NOT NULL,
-    //         agency_url_logo VARCHAR(100) NOT NULL,
-    //         PRIMARY KEY  (id)
-    //     );";
-
-    //     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    //     dbDelta($sql);
-
-    //     // notice that we are updating option, rather than adding it
-    //     update_option('iran_agency_map_db_version', $iran_agency_map_db_version);
-    // }
 }
-
-// register_activation_hook(__FILE__, 'imap_agency_install');
-
-/**
-    * Trick to update plugin database, see docs
-    */
-// function imap_agency_update_db_check()
-// {
-//     global $iran_agency_map_db_version;
-//     if (get_site_option('iran_agency_map_db_version') != $iran_agency_map_db_version) {
-//         imap_agency_install();
-//     }
-// }
-
-// add_action('plugins_loaded', 'imap_agency_update_db_check');

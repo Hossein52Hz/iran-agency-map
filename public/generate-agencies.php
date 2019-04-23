@@ -3,8 +3,11 @@
 function iran_agency_map_generate_areas()
 {
     global $wpdb;
-    $province_result = $wpdb->get_results( ' SELECT * FROM wp_imap_province ' );
-    $agencies_result = $wpdb->get_results( ' SELECT * FROM wp_imap ' );
+    $province_info = $wpdb->prefix . 'imap_province';
+    $agencies_info = $wpdb->prefix . 'imap';
+
+    $province_result = $wpdb->get_results( " SELECT * FROM '" . $province_info . "' " );
+    $agencies_result = $wpdb->get_results( " SELECT * FROM '" . $agencies_info . "' " );
     echo 'areas: {';
     foreach ( $province_result AS $row1 ) 
     {
@@ -32,7 +35,7 @@ function iran_agency_map_generate_areas()
 function iran_agency_map_generate_plot()
 {
     global $wpdb;
-    $province_plot_result = $wpdb->get_results( ' SELECT DISTINCT province_en_name, position_x, position_y FROM wp_imap_province INNER JOIN wp_imap ON wp_imap.agency_province_name=wp_imap_province.province_en_name ' );
+    $province_plot_result = $wpdb->get_results( " SELECT DISTINCT province_en_name, position_x, position_y FROM " . $province_info . "INNER JOIN " . $agencies_info . " ON " . $agencies_info . ".agency_province_name=" . $province_info .".province_en_name " );
     echo ' plots: { ';
     foreach ( $province_plot_result AS $row ) 
     {
@@ -46,7 +49,7 @@ function iran_agency_map_generate_plot()
 function iran_agency_map_generate_link()
 {
     global $wpdb;
-    $province_link_result = $wpdb->get_results( ' SELECT DISTINCT agency_province_name FROM wp_imap ' );
+    $province_link_result = $wpdb->get_results( " SELECT DISTINCT agency_province_name FROM '" . $agencies_info . "' " );
 
     $options = get_option( 'iran_agency_map_settings' );
     $central_agency = rtrim($options['iran_agency_map_centeral_agency']);

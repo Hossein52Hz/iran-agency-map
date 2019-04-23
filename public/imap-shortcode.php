@@ -148,11 +148,7 @@ jQuery(function ($) {
                 <li data-type="area" data-id="yazd" id="yazd">                      <a href="#" id="yazd">                        <?php _e('yazd', 'iran-agency-map' ); ?> </a></li>
             </ul>
 
-            <div class="take-agency">
-                <p>جهت اخذ نمایندگی می توانید با شماره دفتر مرکزی تماس حاصل نمایید:</p>
-                <p>تلفن دفتر مرکزی: 02112345678</p>
-                <p>پست الکترونیک: ifno@wpro.ir</p>
-            </div>
+           
         </div>
 
     </div>

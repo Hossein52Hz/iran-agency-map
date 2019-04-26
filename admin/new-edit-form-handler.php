@@ -85,20 +85,20 @@
     <div class="wrap">
         <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
         <h2><?php _e('agency', 'iran-agency-map' )?> <a class="add-new-h2"
-                                    href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=agencies');?>"><?php _e('back to list', 'iran-agency-map' )?></a>
+                                    href="<?php echo esc_url(get_admin_url(get_current_blog_id(), 'admin.php?page=agencies'));?>"><?php _e('back to list', 'iran-agency-map' )?></a>
         </h2>
     
         <?php if (!empty($notice)): ?>
-        <div id="notice" class="error"><p><?php echo $notice ?></p></div>
+        <div id="notice" class="error"><p><?php echo esc_html($notice); ?></p></div>
         <?php endif;?>
         <?php if (!empty($message)): ?>
-        <div id="message" class="updated"><p><?php echo $message ?></p></div>
+        <div id="message" class="updated"><p><?php echo esc_html($message); ?></p></div>
         <?php endif;?>
     
         <form id="form" class="add-new-agency" method="POST">
             <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__)); ?>"/>
             <?php /* NOTICE: here we storing id to determine will be item added or updated */ ?>
-            <input type="hidden" name="id" value="<?php echo $item['id'] ?>"/>
+            <input type="hidden" name="id" value="<?php echo esc_attr($item['id']); ?>"/>
     
             <div class="metabox-holder" id="poststuff">
                 <div id="post-body">

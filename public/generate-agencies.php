@@ -11,20 +11,20 @@ function iran_agency_map_generate_areas()
     echo 'areas: {';
     foreach ( $province_result AS $row1 ) 
     {
-                echo '"' . $row1->province_en_name . '": {';
+                echo '"' . esc_html($row1->province_en_name) . '": {';
                     
                     if ( $row1->province_en_name == 'caspian' || $row1->province_en_name == 'persian-gulf' ) {
                         // sea and gulf default color
                         echo 'attrs: {fill: "rgb(108, 174, 216)"},';
                     }                    
 
-                   echo 'tooltip: {content: ' . '"' . $row1->province_fa_name . '"},';
+                   echo 'tooltip: {content: ' . '"' . esc_html($row1->province_fa_name) . '"},';
                    echo 'Agencies: ' . "'";
                    foreach ( $agencies_result AS $row ) 
                    {
                        if( $row1->province_en_name == $row->agency_province_name )
                        {
-                           echo  '<div class="branch"><div><img src="' . $row->agency_url_logo . '" class="profile right"><ul class="info"><li class="cityname">' . $row->agency_city_name . '</li><li class="fullname">' . $row->agency_name . '</li></ul></div><div class="contact"><ul><li><i class="profile-icon"></i><span>مدیریت: </span> ' . $row->agency_full_name . '</li><li><i class="tell-icon"></i><span> شماره تلفن: </span>' . $row->agency_tell . '</li><li><i class="mobile-icon"></i><span>شماره همراه: </span>' . $row->agency_mobile . '</li><li><i class="address-icon"></i><span>آدرس: </span>' . $row->agency_address . '</li></ul></div></div>';
+                           echo  '<div class="branch"><div><img src="' . esc_html($row->agency_url_logo) . '" class="profile right"><ul class="info"><li class="cityname">' . esc_html($row->agency_city_name) . '</li><li class="fullname">' . esc_html($row->agency_name) . '</li></ul></div><div class="contact"><ul><li><i class="profile-icon"></i><span>مدیریت: </span> ' . esc_html($row->agency_full_name) . '</li><li><i class="tell-icon"></i><span> شماره تلفن: </span>' . esc_html($row->agency_tell) . '</li><li><i class="mobile-icon"></i><span>شماره همراه: </span>' . esc_html($row->agency_mobile) . '</li><li><i class="address-icon"></i><span>آدرس: </span>' . esc_html($row->agency_address) . '</li></ul></div></div>';
                        }
                    }
                    echo "'";
@@ -41,9 +41,9 @@ function iran_agency_map_generate_plot()
     echo ' plots: { ';
     foreach ( $province_plot_result AS $row ) 
     {
-        echo "'" . $row->province_en_name . "': {";
-        echo "latitude: " . $row->position_x . ",";
-        echo "longitude: " . $row->position_y . ",";
+        echo "'" . esc_html($row->province_en_name) . "': {";
+        echo "latitude: " . esc_html($row->position_x) . ",";
+        echo "longitude: " . esc_html($row->position_y) . ",";
         echo ' }, ';
     }
     echo ' }, ';
@@ -62,8 +62,8 @@ function iran_agency_map_generate_link()
     {
         if( $central_agency != rtrim($row->agency_province_name) )
         {
-            echo "'".$central_agency ."-". rtrim($row->agency_province_name)."':{";
-            echo "between: [" . "'" . $central_agency . "'," . "'" .rtrim($row->agency_province_name)."'],";
+            echo "'". esc_html($central_agency) ."-". esc_html(rtrim($row->agency_province_name))."':{";
+            echo "between: [" . "'" . esc_html($central_agency) . "'," . "'" . esc_html(rtrim($row->agency_province_name))."'],";
             echo '},';
         }
 

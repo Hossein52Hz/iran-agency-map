@@ -29,11 +29,11 @@ jQuery(function ($) {
                 defaultArea: {
                     attrs: {
                         stroke: "#fff",
-                        fill: "<?php echo "$imap_background_color"; ?>",
+                        fill: "<?php echo esc_html("$imap_background_color"); ?>",
                         "stroke-width": 0
                     },
                     attrsHover: {
-                        fill: "<?php echo "$imap_hover_color"; ?>"
+                        fill: "<?php echo esc_html("$imap_hover_color"); ?>"
                     },
                     eventHandlers: {
                         click: function (e, id, mapElem, textElem, elemOptions) {
@@ -89,21 +89,21 @@ jQuery(function ($) {
         listOfProvinces.addEventListener("mouseover", e =>{
         provinceTooltip.style.visibility = "hidden";
         var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
-        pathColor.setAttribute("fill", "<?php echo "$imap_hover_color"; ?>");
+        pathColor.setAttribute("fill", "<?php echo esc_html("$imap_hover_color"); ?>");
     });
 
     
     listOfProvinces.addEventListener("mouseout", e =>{
     provinceTooltip.style.visibility = "unset";
     var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
-    pathColor.setAttribute("fill", "<?php echo "$imap_background_color"; ?>");
+    pathColor.setAttribute("fill", "<?php echo esc_html("$imap_background_color"); ?>");
     });
 
 // set color of buttons from setting page
-    $(".provinces-list li").children().css({"color": "#000", "background": "<?php echo "$imap_background_color"; ?>"});
+    $(".provinces-list li").children().css({"color": "#000", "background": "<?php echo esc_html("$imap_background_color"); ?>"});
     $(".provinces-list li").children().hover(function() {
-      $(this).css({"color": "#fff", "background": "<?php echo "$imap_hover_color"; ?>"}).mouseout(function(){
-              $(this).css({"color": "#000", "background": "<?php echo "$imap_background_color"; ?>"});
+      $(this).css({"color": "#fff", "background": "<?php echo esc_html("$imap_hover_color"); ?>"}).mouseout(function(){
+              $(this).css({"color": "#000", "background": "<?php echo esc_html("$imap_background_color"); ?>"});
           });
   });
 });

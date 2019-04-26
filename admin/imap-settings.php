@@ -76,9 +76,9 @@ function iran_agency_map_centeral_agency_render(  ) {
 			}
 			else echo '<option value="' ;
 			
-			echo "$row->agency_province_name";
+			echo esc_attr("$row->agency_province_name");
 			echo '">';
-			echo _e( $row->agency_province_name, 'iran-agency-map' );
+			echo esc_html_e( $row->agency_province_name, 'iran-agency-map' );
 			echo '</option>';
 		}
 	?>
@@ -97,7 +97,7 @@ function iran_agency_map_bg_color_render(  ) {
 	if( !isset($options['iran_agency_map_bg_color']) )
 	$options['iran_agency_map_bg_color'] = '#c7d7df';
 	?>
-	<input type="text" name='iran_agency_map_settings[iran_agency_map_bg_color]' data-default-color="<?php echo $options['iran_agency_map_bg_color']; ?>" class="imap-color-picker" value='<?php echo $options['iran_agency_map_bg_color']; ?>'>
+	<input type="text" name='iran_agency_map_settings[iran_agency_map_bg_color]' data-default-color="<?php echo esc_attr($options['iran_agency_map_bg_color']); ?>" class="imap-color-picker" value='<?php echo esc_attr($options['iran_agency_map_bg_color']); ?>'>
 	
 	<?php
 }
@@ -108,18 +108,16 @@ function iran_agency_map_bg_hover_color_render(  ) {
 	if( !isset($options['iran_agency_map_bg_hover_color']) )
 	$options['iran_agency_map_bg_hover_color'] = '#08da53';
 	?>
-	<input type="text" name='iran_agency_map_settings[iran_agency_map_bg_hover_color]' data-default-color="<?php echo $options['iran_agency_map_bg_hover_color']; ?>" class="imap-color-picker" value='<?php echo $options['iran_agency_map_bg_hover_color']; ?>'>
+	<input type="text" name='iran_agency_map_settings[iran_agency_map_bg_hover_color]' data-default-color="<?php echo esc_attr($options['iran_agency_map_bg_hover_color']); ?>" class="imap-color-picker" value='<?php echo esc_attr($options['iran_agency_map_bg_hover_color']); ?>'>
 	
 	<?php
 }
 
 function iran_agency_map_settings_section_callback(  ) { 
 
-	echo __( 'after save setting, you can copy below code to use as the shortcode:', 'iran-agency-map' );
-	echo "<br>";
-	echo '<h2 class="imap-shortcode">' . __( '[iran-agency-map]', 'iran-agency-map' ) . '</h2>';
-	echo "<br>";
-	echo __( 'just copy the [iran-agency-map] and paste in new page.', 'iran-agency-map' );
+
+	$output = __( 'after save setting, you can copy below code to use as the shortcode:', 'iran-agency-map' ) . '<br>' . '<h2 class="imap-shortcode">' . __( '[iran-agency-map]', 'iran-agency-map' ) . '</h2>' . '<br>' . __( 'just copy the [iran-agency-map] and paste in new page.', 'iran-agency-map' );
+	echo wp_kses_post($output);
 
 }
 

@@ -41,6 +41,9 @@ jQuery(function ($) {
                                 $('.Agencies').html(elemOptions.Agencies).css({
                                     display: 'none'
                                 }).fadeIn('slow');
+                                $('html, body').animate({
+                                        scrollTop: $(".Agencies").offset().top
+                                    }, 2000);
                             }
                         }
                     }

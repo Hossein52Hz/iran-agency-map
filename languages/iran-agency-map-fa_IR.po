@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imap v1\n"
 "POT-Creation-Date: 2019-04-27 14:13+0430\n"
-"PO-Revision-Date: 2019-04-27 14:14+0430\n"
+"PO-Revision-Date: 2019-04-27 16:41+0430\n"
 "Last-Translator: Hossein52hz <csmasoudi@gmail.com>\n"
 "Language-Team: English\n"
 "Language: fa_IR\n"
@@ -99,12 +99,10 @@ msgid "[iran-agency-map]"
 msgstr "[iran-agency-map]"
 
 #: admin/imap-settings.php:119
-#, fuzzy
-#| msgid "just copy the [imap] and paste in new page."
 msgid "just copy the [iran-agency-map] and paste in new page."
 msgstr ""
-"کافی است کد [imap]  را کپی کرده و در یک برگه جدید paste کنید و برگه را منتشر "
-"کنید."
+"کافی است کد [iran-agency-map]  را کپی کرده و در یک برگه جدید paste کنید و "
+"برگه را منتشر کنید."
 
 #: admin/new-edit-form-handler.php:53
 msgid "Item was successfully saved"

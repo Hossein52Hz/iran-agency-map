@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: imap v1\n"
-"POT-Creation-Date: 2019-04-20 00:04+0430\n"
-"PO-Revision-Date: 2019-04-20 00:04+0430\n"
+"POT-Creation-Date: 2019-04-27 14:13+0430\n"
+"PO-Revision-Date: 2019-04-27 14:14+0430\n"
 "Last-Translator: Hossein52hz <csmasoudi@gmail.com>\n"
 "Language-Team: English\n"
 "Language: fa_IR\n"
@@ -15,53 +15,53 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/agency-item-lists.php:87
+#: admin/agency-item-lists.php:89
 msgid "Edit"
 msgstr "ویرایش"
 
-#: admin/agency-item-lists.php:88
+#: admin/agency-item-lists.php:90
 msgid "Delete"
 msgstr "حذف"
 
-#: admin/agency-item-lists.php:122
+#: admin/agency-item-lists.php:125
 msgid "agency_province_name"
 msgstr "نام استان"
 
-#: admin/agency-item-lists.php:123
+#: admin/agency-item-lists.php:126
 msgid "agency_city_name"
 msgstr "نام شهر"
 
-#: admin/agency-item-lists.php:124
+#: admin/agency-item-lists.php:127
 msgid "agency_name"
 msgstr "نام(برند) نمایندگی"
 
-#: admin/agency-item-lists.php:125
+#: admin/agency-item-lists.php:128
 msgid "agency_full_name"
 msgstr "نام و نام خانوادگی"
 
-#: admin/agency-item-lists.php:126
+#: admin/agency-item-lists.php:129
 msgid "agency_tell"
 msgstr "تلفن تماس"
 
-#: admin/agency-item-lists.php:127
+#: admin/agency-item-lists.php:130
 msgid "agency_mobile"
 msgstr "شماره همراه"
 
-#: admin/agency-item-lists.php:128
+#: admin/agency-item-lists.php:131
 msgid "agency_address"
 msgstr "آدرس نمایندگی"
 
-#: admin/agency-page-handler.php:21
+#: admin/agency-page-handler.php:22
 #, php-format
 msgid "Items deleted: %d"
 msgstr " %d آیتم حذف گردید"
 
-#: admin/agency-page-handler.php:27 admin/imap-admin-menu.php:16
+#: admin/agency-page-handler.php:28 admin/imap-admin-menu.php:16
 #: admin/imap-admin-menu.php:17
 msgid "agencies"
 msgstr "نمایندگی ها"
 
-#: admin/agency-page-handler.php:28 admin/imap-admin-menu.php:18
+#: admin/agency-page-handler.php:29 admin/imap-admin-menu.php:18
 msgid "Add new"
 msgstr "افزودن"
 
@@ -89,16 +89,16 @@ msgstr "رنگ اصلی نقشه"
 msgid "Hover map color"
 msgstr "تغییر رنگ نقشه (Hover)"
 
-#: admin/imap-settings.php:116
+#: admin/imap-settings.php:119
 msgid "after save setting, you can copy below code to use as the shortcode:"
 msgstr ""
 "بعد از ذخیره تنظیمات و ایجاد نمایندگی ها می توانید از کد زیر استفاده کنید:"
 
-#: admin/imap-settings.php:118
+#: admin/imap-settings.php:119
 msgid "[iran-agency-map]"
-msgstr ""
+msgstr "[iran-agency-map]"
 
-#: admin/imap-settings.php:120
+#: admin/imap-settings.php:119
 #, fuzzy
 #| msgid "just copy the [imap] and paste in new page."
 msgid "just copy the [iran-agency-map] and paste in new page."
@@ -106,215 +106,231 @@ msgstr ""
 "کافی است کد [imap]  را کپی کرده و در یک برگه جدید paste کنید و برگه را منتشر "
 "کنید."
 
-#: admin/new-edit-form-handler.php:52
+#: admin/new-edit-form-handler.php:53
 msgid "Item was successfully saved"
 msgstr "آیتم به موفقیت ذخیره گردید"
 
-#: admin/new-edit-form-handler.php:54
+#: admin/new-edit-form-handler.php:55
 msgid "There was an error while saving item"
 msgstr "هنگام ذخیره سازی خطایی رخ داده است"
 
-#: admin/new-edit-form-handler.php:59
+#: admin/new-edit-form-handler.php:61
 msgid "Item was successfully updated"
 msgstr "گزینه با موفقیت بروزرسانی گردید"
 
-#: admin/new-edit-form-handler.php:61
+#: admin/new-edit-form-handler.php:63
 msgid "There was an error while updating item"
 msgstr "خطایی در هنگام بروزرسانی آیتم رخ داده است"
 
-#: admin/new-edit-form-handler.php:76
+#: admin/new-edit-form-handler.php:80
 msgid "Item not found"
 msgstr "مورد یافت نشد"
 
-#: admin/new-edit-form-handler.php:82
+#: admin/new-edit-form-handler.php:86
 msgid "agency form registration"
 msgstr "ثبت اطلاعات نمایندگی"
 
-#: admin/new-edit-form-handler.php:87
+#: admin/new-edit-form-handler.php:91
 msgid "agency"
 msgstr "نمایندگی"
 
-#: admin/new-edit-form-handler.php:88
+#: admin/new-edit-form-handler.php:92
 msgid "back to list"
 msgstr "بازگشت به لیست"
 
-#: admin/new-edit-form-handler.php:108
+#: admin/new-edit-form-handler.php:112
 msgid "Save"
 msgstr "ذخیره"
 
-#: admin/new-edit-form-handler.php:131
+#: admin/new-edit-form-handler.php:135
 msgid "agency province name"
 msgstr "نام استان"
 
-#: admin/new-edit-form-handler.php:136 public/imap-shortcode.php:122
+#: admin/new-edit-form-handler.php:140 public/imap-shortcode.php:122
 msgid "alborz"
 msgstr "البرز"
 
-#: admin/new-edit-form-handler.php:137 public/imap-shortcode.php:120
+#: admin/new-edit-form-handler.php:141 public/imap-shortcode.php:120
 msgid "ardabil"
 msgstr "اردبیل"
 
-#: admin/new-edit-form-handler.php:138 public/imap-shortcode.php:118
+#: admin/new-edit-form-handler.php:142 public/imap-shortcode.php:118
 msgid "east-azerbaijan"
 msgstr "آذربایجان شرقی"
 
-#: admin/new-edit-form-handler.php:139 public/imap-shortcode.php:119
+#: admin/new-edit-form-handler.php:143 public/imap-shortcode.php:119
 msgid "west-azerbaijan"
 msgstr "آذربایجان غربی"
 
-#: admin/new-edit-form-handler.php:140 public/imap-shortcode.php:124
+#: admin/new-edit-form-handler.php:144 public/imap-shortcode.php:124
 msgid "bushehr"
 msgstr "بوشهر"
 
-#: admin/new-edit-form-handler.php:141 public/imap-shortcode.php:126
+#: admin/new-edit-form-handler.php:145 public/imap-shortcode.php:126
 msgid "chaharmahal-and-bakhtiari"
 msgstr "چهارمحال و بختیاری"
 
-#: admin/new-edit-form-handler.php:142 public/imap-shortcode.php:134
+#: admin/new-edit-form-handler.php:146 public/imap-shortcode.php:134
 msgid "fars"
 msgstr "فارس"
 
-#: admin/new-edit-form-handler.php:143 public/imap-shortcode.php:142
+#: admin/new-edit-form-handler.php:147 public/imap-shortcode.php:142
 msgid "gilan"
 msgstr "گیلان"
 
-#: admin/new-edit-form-handler.php:144 public/imap-shortcode.php:141
+#: admin/new-edit-form-handler.php:148 public/imap-shortcode.php:141
 msgid "golestan"
 msgstr "گلستان"
 
-#: admin/new-edit-form-handler.php:145 public/imap-shortcode.php:147
+#: admin/new-edit-form-handler.php:149 public/imap-shortcode.php:147
 msgid "hamadan"
 msgstr "همدان"
 
-#: admin/new-edit-form-handler.php:146 public/imap-shortcode.php:146
+#: admin/new-edit-form-handler.php:150 public/imap-shortcode.php:146
 msgid "hormozgan"
 msgstr "هرمزگان"
 
-#: admin/new-edit-form-handler.php:147 public/imap-shortcode.php:123
+#: admin/new-edit-form-handler.php:151 public/imap-shortcode.php:123
 msgid "ilam"
 msgstr "ایلام"
 
-#: admin/new-edit-form-handler.php:148 public/imap-shortcode.php:121
+#: admin/new-edit-form-handler.php:152 public/imap-shortcode.php:121
 msgid "isfahan"
 msgstr "اصفهان"
 
-#: admin/new-edit-form-handler.php:149 public/imap-shortcode.php:138
+#: admin/new-edit-form-handler.php:153 public/imap-shortcode.php:138
 msgid "kerman"
 msgstr "کرمان"
 
-#: admin/new-edit-form-handler.php:150 public/imap-shortcode.php:139
+#: admin/new-edit-form-handler.php:154 public/imap-shortcode.php:139
 msgid "kermanshah"
 msgstr "کرمانشاه"
 
-#: admin/new-edit-form-handler.php:151 public/imap-shortcode.php:127
+#: admin/new-edit-form-handler.php:155 public/imap-shortcode.php:127
 msgid "north-khorasan"
 msgstr "خراسان شمالی"
 
-#: admin/new-edit-form-handler.php:152 public/imap-shortcode.php:128
+#: admin/new-edit-form-handler.php:156 public/imap-shortcode.php:128
 msgid "khorasan-razavi"
 msgstr "خراسان رضوی"
 
-#: admin/new-edit-form-handler.php:153 public/imap-shortcode.php:129
+#: admin/new-edit-form-handler.php:157 public/imap-shortcode.php:129
 msgid "south-khorasan"
 msgstr "خراسان جنوبی"
 
-#: admin/new-edit-form-handler.php:154 public/imap-shortcode.php:130
+#: admin/new-edit-form-handler.php:158 public/imap-shortcode.php:130
 msgid "khuzestan"
 msgstr "خوزستان"
 
-#: admin/new-edit-form-handler.php:155 public/imap-shortcode.php:140
+#: admin/new-edit-form-handler.php:159 public/imap-shortcode.php:140
 msgid "kohgiluyeh-and-boyer-ahmad"
 msgstr "کهگیلویه‌و‌بویراحمد"
 
-#: admin/new-edit-form-handler.php:156 public/imap-shortcode.php:137
+#: admin/new-edit-form-handler.php:160 public/imap-shortcode.php:137
 msgid "kurdistan"
 msgstr "کردستان"
 
-#: admin/new-edit-form-handler.php:157 public/imap-shortcode.php:143
+#: admin/new-edit-form-handler.php:161 public/imap-shortcode.php:143
 msgid "lorestan"
 msgstr "لرستان"
 
-#: admin/new-edit-form-handler.php:158 public/imap-shortcode.php:145
+#: admin/new-edit-form-handler.php:162 public/imap-shortcode.php:145
 msgid "markazi"
 msgstr "مرکزی"
 
-#: admin/new-edit-form-handler.php:159 public/imap-shortcode.php:144
+#: admin/new-edit-form-handler.php:163 public/imap-shortcode.php:144
 msgid "mazandaran"
 msgstr "مازندران"
 
-#: admin/new-edit-form-handler.php:160 public/imap-shortcode.php:135
+#: admin/new-edit-form-handler.php:164 public/imap-shortcode.php:135
 msgid "qazvin"
 msgstr "قزوین"
 
-#: admin/new-edit-form-handler.php:161 public/imap-shortcode.php:136
+#: admin/new-edit-form-handler.php:165 public/imap-shortcode.php:136
 msgid "qom"
 msgstr "قم"
 
-#: admin/new-edit-form-handler.php:162 public/imap-shortcode.php:132
+#: admin/new-edit-form-handler.php:166 public/imap-shortcode.php:132
 msgid "semnan"
 msgstr "سمنان"
 
-#: admin/new-edit-form-handler.php:163 public/imap-shortcode.php:133
+#: admin/new-edit-form-handler.php:167 public/imap-shortcode.php:133
 msgid "sistan-baluchestan"
 msgstr "سیستان‌و‌بلوچستان"
 
-#: admin/new-edit-form-handler.php:164 public/imap-shortcode.php:125
+#: admin/new-edit-form-handler.php:168 public/imap-shortcode.php:125
 msgid "tehran"
 msgstr "تهران"
 
-#: admin/new-edit-form-handler.php:165 public/imap-shortcode.php:148
+#: admin/new-edit-form-handler.php:169 public/imap-shortcode.php:148
 msgid "yazd"
 msgstr "یزد"
 
-#: admin/new-edit-form-handler.php:166 public/imap-shortcode.php:131
+#: admin/new-edit-form-handler.php:170 public/imap-shortcode.php:131
 msgid "zanjan"
 msgstr "زنجان"
 
-#: admin/new-edit-form-handler.php:167
+#: admin/new-edit-form-handler.php:171
 msgid "caspian"
 msgstr "دریای خزر"
 
-#: admin/new-edit-form-handler.php:168
+#: admin/new-edit-form-handler.php:172
 msgid "persian-gulf"
 msgstr "خلیج فارس"
 
-#: admin/new-edit-form-handler.php:169
+#: admin/new-edit-form-handler.php:173
 msgid "urmia"
 msgstr "دریاچه ارومیه"
 
-#: admin/new-edit-form-handler.php:177 admin/new-edit-form-handler.php:181
+#: admin/new-edit-form-handler.php:181 admin/new-edit-form-handler.php:185
 msgid "agency city name"
 msgstr "شهر نمایندگی"
 
-#: admin/new-edit-form-handler.php:187 admin/new-edit-form-handler.php:191
+#: admin/new-edit-form-handler.php:191 admin/new-edit-form-handler.php:195
 msgid "agency name"
 msgstr "نام نمایندگی"
 
-#: admin/new-edit-form-handler.php:197 admin/new-edit-form-handler.php:201
+#: admin/new-edit-form-handler.php:201 admin/new-edit-form-handler.php:205
 msgid "agency full-name"
 msgstr "نام و نام خانوادگی"
 
-#: admin/new-edit-form-handler.php:207 admin/new-edit-form-handler.php:211
+#: admin/new-edit-form-handler.php:211 admin/new-edit-form-handler.php:215
 msgid "agency tell"
 msgstr "شماره تلفن"
 
-#: admin/new-edit-form-handler.php:217 admin/new-edit-form-handler.php:221
+#: admin/new-edit-form-handler.php:221 admin/new-edit-form-handler.php:225
 msgid "agency mobile"
 msgstr "شماره همراه"
 
-#: admin/new-edit-form-handler.php:227 admin/new-edit-form-handler.php:231
+#: admin/new-edit-form-handler.php:231 admin/new-edit-form-handler.php:235
 msgid "agency address"
 msgstr "آدرس"
 
-#: admin/new-edit-form-handler.php:237
+#: admin/new-edit-form-handler.php:241
 msgid "agency url logo"
 msgstr "تصویر نمایندگی"
 
-#: admin/new-edit-form-handler.php:263
+#: admin/new-edit-form-handler.php:267
 msgid "agency province name is required"
 msgstr "نام استان الزامی است"
 
-#: public/imap-shortcode.php:158
+#: public/generate-agencies.php:27
+msgid "Manager name:"
+msgstr "نام نمایندگی:"
+
+#: public/generate-agencies.php:27
+msgid "Phone numbre:"
+msgstr "تلفن تماس:"
+
+#: public/generate-agencies.php:27
+msgid "Mobile Numbre:"
+msgstr "شماره همراه:"
+
+#: public/generate-agencies.php:27
+msgid "Agency Address:"
+msgstr "آدرس:"
+
+#: public/imap-shortcode.php:160
 msgid "Click on every agency to display information of every agency."
 msgstr "جهت مشاهده نمایندگان هر استان روی نام استان کلیک کنید."
 

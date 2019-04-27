@@ -180,8 +180,8 @@ class iran_agency_map_List_Table extends WP_List_Table
     {
         global $wpdb;
         $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
-        $id = intval($_REQUEST['id']);
         if ('delete' === $this->current_action()) {
+            $id = intval($_REQUEST['id']);
             $ids = isset($id) ? $id : array();
             if (is_array($ids)) $ids = implode(',', $ids);
 
@@ -214,7 +214,7 @@ class iran_agency_map_List_Table extends WP_List_Table
         $this->process_bulk_action();
 
         // will be used in pagination settings
-        $total_items = $wpdb->get_var($wpdb->prepare("SELECT COUNT(id) FROM $agencies_info"));
+        $total_items = $wpdb->get_var("SELECT COUNT('id') FROM $agencies_info");
 
         // prepare query params, as usual current page, order by and order direction
         $paged = isset($_REQUEST['paged']) ? ($per_page * max(0, intval($_REQUEST['paged']) - 1)) : 0;

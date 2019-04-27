@@ -83,9 +83,11 @@ class iran_agency_map_List_Table extends WP_List_Table
     }
 
     function column_agency_province_name($item) {
+        $item_id = intval($item['id']);
+        $request_Page = sanitize_text_field($_REQUEST['page']);
         $actions = array(
-            'edit' => sprintf('<a href="?page=agencies_form&id=%s">%s</a>', $item['id'], __('Edit', 'iran-agency-map' )),
-            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>', $_REQUEST['page'], $item['id'], __('Delete', 'iran-agency-map' )),
+            'edit' => sprintf('<a href="?page=agencies_form&id=%s">%s</a>', $item_id, __('Edit', 'iran-agency-map' )),
+            'delete' => sprintf('<a href="?page=%s&action=delete&id=%s">%s</a>',$request_Page , $item_id, __('Delete', 'iran-agency-map' )),
         );
 
         return sprintf('%s %s',
@@ -102,9 +104,10 @@ class iran_agency_map_List_Table extends WP_List_Table
         */
     function column_cb($item)
     {
+        $item_id = intval($item['id']);
         return sprintf(
             '<input type="checkbox" name="id[]" value="%s" />',
-            $item['id']
+            $item_id
         );
     }
 
@@ -177,13 +180,13 @@ class iran_agency_map_List_Table extends WP_List_Table
     {
         global $wpdb;
         $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
-
+        $id = intval($_REQUEST['id']);
         if ('delete' === $this->current_action()) {
-            $ids = isset($_REQUEST['id']) ? $_REQUEST['id'] : array();
+            $ids = isset($id) ? $id : array();
             if (is_array($ids)) $ids = implode(',', $ids);
 
             if (!empty($ids)) {
-                $wpdb->query("DELETE FROM $agencies_info WHERE id IN($ids)");
+                $wpdb->query($wpdb->prepare( "DELETE FROM $agencies_info WHERE id IN($ids)"));
             }
         }
     }
@@ -196,7 +199,6 @@ class iran_agency_map_List_Table extends WP_List_Table
     function prepare_items()
     {
         global $wpdb;
-        
         $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
 
         $per_page = 20; // constant, how much records will be shown per page
@@ -212,12 +214,12 @@ class iran_agency_map_List_Table extends WP_List_Table
         $this->process_bulk_action();
 
         // will be used in pagination settings
-        $total_items = $wpdb->get_var("SELECT COUNT(id) FROM $agencies_info");
+        $total_items = $wpdb->get_var($wpdb->prepare("SELECT COUNT(id) FROM $agencies_info"));
 
         // prepare query params, as usual current page, order by and order direction
         $paged = isset($_REQUEST['paged']) ? ($per_page * max(0, intval($_REQUEST['paged']) - 1)) : 0;
-        $orderby = (isset($_REQUEST['orderby']) && in_array($_REQUEST['orderby'], array_keys($this->get_sortable_columns()))) ? $_REQUEST['orderby'] : 'agency_province_name';
-        $order = (isset($_REQUEST['order']) && in_array($_REQUEST['order'], array('asc', 'desc'))) ? $_REQUEST['order'] : 'asc';
+        $orderby = (isset($_REQUEST['orderby']) && in_array(sanitize_text_field($_REQUEST['orderby']), array_keys($this->get_sortable_columns()))) ? $_REQUEST['orderby'] : 'agency_province_name';
+        $order = (isset($_REQUEST['order']) && in_array(sanitize_text_field($_REQUEST['order']), array('asc', 'desc'))) ? sanitize_text_field($_REQUEST['order']) : 'asc';
 
         // [REQUIRED] define $items array
         // notice that last argument is ARRAY_A, so we will retrieve array

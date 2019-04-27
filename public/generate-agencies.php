@@ -6,8 +6,8 @@ function iran_agency_map_generate_areas()
     $province_info = $wpdb->prefix . 'iam_province_info';
     $agencies_info = $wpdb->prefix . 'iam_agencies_info';
 
-    $province_result = $wpdb->get_results( " SELECT * FROM $province_info ");
-    $agencies_result = $wpdb->get_results( " SELECT * FROM $agencies_info ");
+    $province_result = $wpdb->get_results(" SELECT * FROM $province_info ");
+    $agencies_result = $wpdb->get_results(" SELECT * FROM $agencies_info ");
     echo 'areas: {';
     foreach ( $province_result AS $row1 ) 
     {
@@ -37,7 +37,8 @@ function iran_agency_map_generate_plot()
     global $wpdb;
     $province_info = $wpdb->prefix . 'iam_province_info';
     $agencies_info = $wpdb->prefix . 'iam_agencies_info';
-    $province_plot_result = $wpdb->get_results( " SELECT DISTINCT province_en_name, position_x, position_y FROM $province_info INNER JOIN $agencies_info  ON $agencies_info.agency_province_name = $province_info.province_en_name " );
+    
+    $province_plot_result = $wpdb->get_results( "SELECT DISTINCT province_en_name, position_x, position_y FROM $province_info INNER JOIN $agencies_info ON $agencies_info.agency_province_name = $province_info.province_en_name " );
     echo ' plots: { ';
     foreach ( $province_plot_result AS $row ) 
     {
@@ -53,7 +54,7 @@ function iran_agency_map_generate_link()
     global $wpdb;
     $province_info = $wpdb->prefix . 'iam_province_info';
     $agencies_info = $wpdb->prefix . 'iam_agencies_info';
-    $province_link_result = $wpdb->get_results( " SELECT DISTINCT agency_province_name FROM $agencies_info " );
+    $province_link_result = $wpdb->get_results( "SELECT DISTINCT agency_province_name FROM $agencies_info " );
 
     $options = get_option( 'iran_agency_map_settings' );
     $central_agency = rtrim($options['iran_agency_map_centeral_agency']);

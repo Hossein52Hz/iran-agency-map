@@ -44,17 +44,19 @@
             // validate data, and if all ok save item to database
             // if id is zero insert otherwise update
             $item_valid = iran_agency_map_agency_validate_agency($item);
+            $item_id = intval($item['id']);
             if ($item_valid === true) {
-                if ($item['id'] == 0) {
+                if ($item_id == 0) {
                     $result = $wpdb->insert($agencies_info, $item);
-                    $item['id'] = $wpdb->insert_id;
+                    $item_id = $wpdb->insert_id;
                     if ($result) {
                         $message = __('Item was successfully saved', 'iran-agency-map' );
                     } else {
                         $notice = __('There was an error while saving item', 'iran-agency-map' );
                     }
                 } else {
-                    $result = $wpdb->update($agencies_info, $item, array('id' => $item['id']));
+                    
+                    $result = $wpdb->update($agencies_info, $item, array('id' => $item_id));
                     if ($result) {
                         $message = __('Item was successfully updated', 'iran-agency-map' );
                     } else {
@@ -69,8 +71,10 @@
         else {
             // if this is not post back we load item to edit or give new one to create
             $item = $default;
+            $id = intval($_REQUEST['id']);
             if (isset($_REQUEST['id'])) {
-                $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $agencies_info WHERE id = %d", $_REQUEST['id']), ARRAY_A);
+                
+                $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $agencies_info WHERE id = %d", $id), ARRAY_A);
                 if (!$item) {
                     $item = $default;
                     $notice = __('Item not found', 'iran-agency-map' );
@@ -98,7 +102,7 @@
         <form id="form" class="add-new-agency" method="POST">
             <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__)); ?>"/>
             <?php /* NOTICE: here we storing id to determine will be item added or updated */ ?>
-            <input type="hidden" name="id" value="<?php echo esc_attr($item['id']); ?>"/>
+            <input type="hidden" name="id" value="<?php echo esc_attr($item_id); ?>"/>
     
             <div class="metabox-holder" id="poststuff">
                 <div id="post-body">

@@ -7,14 +7,14 @@
     // set setting value
     $options = get_option( 'iran_agency_map_settings' );
     if( isset( $options['iran_agency_map_bg_color']) ){
-        $imap_background_color = $options['iran_agency_map_bg_color'];
+        $iam_background_color = $options['iran_agency_map_bg_color'];
     }
-    else $imap_background_color = '#c7d7df';
+    else $iam_background_color = '#c7d7df';
 
     if( isset( $options['iran_agency_map_bg_hover_color']) ){
-        $imap_hover_color = $options['iran_agency_map_bg_hover_color'];
+        $iam_hover_color = $options['iran_agency_map_bg_hover_color'];
     }
-    else $imap_hover_color = '#08da53';
+    else $iam_hover_color = '#08da53';
 
 
 ?>
@@ -29,11 +29,11 @@ jQuery(function ($) {
                 defaultArea: {
                     attrs: {
                         stroke: "#fff",
-                        fill: "<?php echo esc_html("$imap_background_color"); ?>",
+                        fill: "<?php echo esc_html("$iam_background_color"); ?>",
                         "stroke-width": 0
                     },
                     attrsHover: {
-                        fill: "<?php echo esc_html("$imap_hover_color"); ?>"
+                        fill: "<?php echo esc_html("$iam_hover_color"); ?>"
                     },
                     eventHandlers: {
                         click: function (e, id, mapElem, textElem, elemOptions) {
@@ -92,28 +92,28 @@ jQuery(function ($) {
         listOfProvinces.addEventListener("mouseover", e =>{
         provinceTooltip.style.visibility = "hidden";
         var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
-        pathColor.setAttribute("fill", "<?php echo esc_html("$imap_hover_color"); ?>");
+        pathColor.setAttribute("fill", "<?php echo esc_html("$iam_hover_color"); ?>");
     });
 
     
     listOfProvinces.addEventListener("mouseout", e =>{
     provinceTooltip.style.visibility = "unset";
     var pathColor = document.querySelector(`[data-id='${e.target.id}']`);
-    pathColor.setAttribute("fill", "<?php echo esc_html("$imap_background_color"); ?>");
+    pathColor.setAttribute("fill", "<?php echo esc_html("$iam_background_color"); ?>");
     });
 
 // set color of buttons from setting page
-    $(".provinces-list li").children().css({"color": "#000", "background": "<?php echo esc_html("$imap_background_color"); ?>"});
+    $(".provinces-list li").children().css({"color": "#000", "background": "<?php echo esc_html("$iam_background_color"); ?>"});
     $(".provinces-list li").children().hover(function() {
-      $(this).css({"color": "#fff", "background": "<?php echo esc_html("$imap_hover_color"); ?>"}).mouseout(function(){
-              $(this).css({"color": "#000", "background": "<?php echo esc_html("$imap_background_color"); ?>"});
+      $(this).css({"color": "#fff", "background": "<?php echo esc_html("$iam_hover_color"); ?>"}).mouseout(function(){
+              $(this).css({"color": "#000", "background": "<?php echo esc_html("$iam_background_color"); ?>"});
           });
   });
 });
 
 </script>
 
-<div class="imap-section">
+<div class="iam-section">
     <div class="mapcontainer">
         <div class="map"></div>
         <div class="province-button">
@@ -157,7 +157,7 @@ jQuery(function ($) {
     </div>
 
 </div>
-<div class="imap-section imap-clear">
+<div class="iam-section iam-clear">
     <div class="Agencies">
         <div class="aboutus" style="line-height: 30px;">
         <p><?php _e( 'Click on every agency to display information of every agency.', 'iran-agency-map' ) ?></p>

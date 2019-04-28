@@ -48,7 +48,7 @@ function iran_agency_map_agency_install()
     // --
     if( $wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE '$agencies_info'")) != $agencies_info )
     {
-        $iran_agency_map_create_imap_table = "CREATE TABLE " . $agencies_info . " (
+        $iran_agency_map_create_table = "CREATE TABLE " . $agencies_info . " (
             id int(11) NOT NULL AUTO_INCREMENT,
             agency_province_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
             agency_city_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -63,7 +63,7 @@ function iran_agency_map_agency_install()
         )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-        dbDelta($iran_agency_map_create_imap_table);
+        dbDelta($iran_agency_map_create_table);
 
         $iran_agency_map_insert_province_data = $wpdb->query($wpdb->prepare("INSERT INTO `".$province_info."` (province_en_name, province_fa_name, position_x, position_y) VALUES
         ('east-azerbaijan', 'آذربایجان شرقی', 130, 140),

@@ -9,11 +9,11 @@
     url('../fonts/vazir/Vazir.ttf') format('truetype');
 }
 
-.imap-section * {
+.iam-section * {
   box-sizing: border-box;
 }
 
-.imap-clear {
+.iam-clear {
   clear: both;
 }
 
@@ -133,19 +133,19 @@ path:hover {
 }
 
 .profile-icon {
-  background: url(../img/imap-user.png);
+  background: url(../img/iam-user.png);
 }
 
 .address-icon {
-  background: url(../img/imap-address.png);
+  background: url(../img/iam-address.png);
 }
 
 .tell-icon {
-  background: url(../img/imap-phone.png);
+  background: url(../img/iam-phone.png);
 }
 
 .mobile-icon {
-  background: url(../img/imap-mobile.png);
+  background: url(../img/iam-mobile.png);
 }
 
 .info {

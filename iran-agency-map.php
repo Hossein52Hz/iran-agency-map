@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Iran agency map
  * Plugin URI:        wpro.ir
- * Description:       The Imap plugin is a great plugin for Iranian companies that they can display their agencies on a beautiful SVG map.
+ * Description:       The Iran-agency-map plugin is a great plugin for Iranian companies that they can display their agencies on a beautiful SVG map.
  * Version:           1.0.0
  * Author:            Hossein Masoudi
  * Author URI:        https://github.com/Hossein52Hz
@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 /**
- * install and prepare imap table in Database
+ * install and prepare Iran-agency-map table in Database
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/activation.php';
 
@@ -30,9 +30,9 @@ register_activation_hook( __FILE__ , 'iran_agency_map_agency_install');
  require_once plugin_dir_path( __FILE__ ) . 'admin/agency-item-lists.php';
 
  /**
-  * create imap admin menu and sub-menu
+  * create Iran-agency-map admin menu and sub-menu
   */
-  require_once plugin_dir_path( __FILE__ ) . 'admin/imap-admin-menu.php';
+  require_once plugin_dir_path( __FILE__ ) . 'admin/iam-admin-menu.php';
 
   /**
    * add agency page handler
@@ -44,7 +44,7 @@ register_activation_hook( __FILE__ , 'iran_agency_map_agency_install');
   /**
    * create plugin settings page
    */
-  require_once plugin_dir_path( __FILE__ ) . 'admin/imap-settings.php';
+  require_once plugin_dir_path( __FILE__ ) . 'admin/iam-settings.php';
 
   /**
    * add translation section
@@ -55,15 +55,15 @@ register_activation_hook( __FILE__ , 'iran_agency_map_agency_install');
   add_action( 'plugins_loaded', 'iran_agency_map_agency_languages' );
 
   /**
-   * add script and style of imap plugin
+   * add script and style of Iran-agency-map plugin
    */
   require_once plugin_dir_path( __FILE__ ) . 'includes/scripts.php';
   add_action( 'wp_enqueue_scripts', 'iran_agency_map_scripts' );
   
   /**
-   * Imap front-end shortcut
+   * Iran-agency-map front-end shortcut
    */
-  require_once plugin_dir_path( __FILE__ ) . 'public/imap-shortcode.php';
+  require_once plugin_dir_path( __FILE__ ) . 'public/iam-shortcode.php';
 
 
   /**

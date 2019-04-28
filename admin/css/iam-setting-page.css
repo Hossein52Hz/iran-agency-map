@@ -1,20 +1,20 @@
-.imap-setting-page {
+.iam-setting-page {
     background: #fff;
     width: 700px;
     margin-top: 30px;
     font-family: "Vazir";
 }
 
-.imap-setting-page form {
+.iam-setting-page form {
     padding: 40px;
 }
 
-.imap-setting-page form h2 {
+.iam-setting-page form h2 {
     text-align: center;
     font-family: "Vazir";
 }
 
-.imap-shortcode {
+.iam-shortcode {
     text-align: center;
     font-weight: bold;
 }

@@ -19,6 +19,6 @@ jQuery(document).ready(function($){
     });
 
     $(function() {
-        $('.imap-color-picker').wpColorPicker();
+        $('.iam-color-picker').wpColorPicker();
     });
 });

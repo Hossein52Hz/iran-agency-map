@@ -29,7 +29,7 @@ function iran_agency_map_agency_install()
     // -- Table structure for table province_info
     // --
     
-    if( $wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE '$province_info'")) != $province_info )
+    if( $wpdb->get_var("SHOW TABLES LIKE '$province_info'") != $province_info )
     {
         $iran_agency_map_table = "CREATE TABLE " . $province_info . " (
             province_en_name varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -46,7 +46,7 @@ function iran_agency_map_agency_install()
     // --
     // -- Table structure for table agencies_info
     // --
-    if( $wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE '$agencies_info'")) != $agencies_info )
+    if( $wpdb->get_var("SHOW TABLES LIKE '$agencies_info'") != $agencies_info )
     {
         $iran_agency_map_create_table = "CREATE TABLE " . $agencies_info . " (
             id int(11) NOT NULL AUTO_INCREMENT,

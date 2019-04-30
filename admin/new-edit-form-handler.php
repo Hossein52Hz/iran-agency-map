@@ -71,9 +71,9 @@
         else {
             // if this is not post back we load item to edit or give new one to create
             $item = $default;
-            $id = intval($_REQUEST['id']);
+            
             if (isset($_REQUEST['id'])) {
-                
+                $id = intval($_REQUEST['id']);
                 $item = $wpdb->get_row($wpdb->prepare("SELECT * FROM $agencies_info WHERE id = %d", $id), ARRAY_A);
                 if (!$item) {
                     $item = $default;

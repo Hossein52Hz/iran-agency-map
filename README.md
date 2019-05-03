@@ -64,5 +64,11 @@ Step2: You can use of the following shortcode for your Pages:
 
 == Changelog ==
 
+= 1.0.2 =
+* fix sql notice while removing the plugin
+
+= 1.0.1 =
+* fix notice issue
+
 = 1.0 =
 * The initial version

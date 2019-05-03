@@ -10,6 +10,6 @@ function iran_agency_map_uninstall()
     $province_info = $wpdb->prefix . 'iam_province_info';
     $agencies_info = $wpdb->prefix . 'iam_agencies_info';
     global $wpdb;
-    $wpdb->query($wpdb->prepare("DROP TABLE IF EXISTS '" . $agencies_info ."' "));
-    $wpdb->query($wpdb->prepare("DROP TABLE IF EXISTS '" . $province_info ."' "));
+    $wpdb->query($wpdb->prepare("DROP TABLE IF EXISTS $agencies_info"));
+    $wpdb->query($wpdb->prepare("DROP TABLE IF EXISTS $province_info"));
 }

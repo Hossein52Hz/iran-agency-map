@@ -3,7 +3,7 @@
  * Plugin Name:       Iran agency map
  * Plugin URI:        wpro.ir
  * Description:       The Iran-agency-map plugin is a great plugin for Iranian companies that they can display their agencies on a beautiful SVG map.
- * Version:           1.0.0
+ * Version:           1.0.2
  * Author:            Hossein Masoudi
  * Author URI:        https://github.com/Hossein52Hz
  * License:           GPL-2.0+

@@ -4,8 +4,8 @@ Donate link: https://zarinp.al/@hossein52hz
 Author: Hossein Masoudi
 Tags: Iran agency map, agencies, iran map
 Requires at least: 5.1
-Tested up to: 5.1.1
-Stable tag: 1.0.2
+Tested up to: 5.2
+Stable tag: 1.0.3
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,11 @@ Step2: You can use of the following shortcode for your Pages:
 `[iran-agency-map]`
 
 == Changelog ==
+
+= 1.0.3 =
+*Add search box in list view page
+*fix remove single agency
+*fix remove multiple agency
 
 = 1.0.2 =
 * fix sql notice while removing the plugin

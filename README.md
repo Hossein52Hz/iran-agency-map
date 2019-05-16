@@ -16,7 +16,7 @@ This plugin is for companies that want to display their agencies based on Iran's
 It's light and customizeable. You can add many agencies. and Connect them to the one point by lines.
 
 = More Information =
-
+*   Download From [Wordpress.org](https://wordpress.org/plugins/iran-agency-map).
 *   See Online [Demo](http://wpro.ir/imap/?page_id=12).
 *   Fork Us In [Github](https://github.com/Hossein52Hz/iran-agency-map).
 *   Donate Us [By Zarinpal](https://zarinp.al/@hossein52hz).
@@ -63,6 +63,11 @@ Step2: You can use of the following shortcode for your Pages:
 `[iran-agency-map]`
 
 == Changelog ==
+
+= 1.0.3 =
+*Add search box in list view page
+*fix remove single agency
+*fix remove multiple agency
 
 = 1.0.2 =
 * fix sql notice while removing the plugin

@@ -181,12 +181,19 @@ class iran_agency_map_List_Table extends WP_List_Table
         global $wpdb;
         $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
         if ('delete' === $this->current_action()) {
-            $id = intval($_REQUEST['id']);
+            $id = $_REQUEST['id'];
             $ids = isset($id) ? $id : array();
-            if (is_array($ids)) $ids = implode(',', $ids);
-
+            $count_id = count($ids);
             if (!empty($ids)) {
-                $wpdb->query($wpdb->prepare( "DELETE FROM $agencies_info WHERE id IN($ids)"));
+                if($count_id == 1){
+                    $item = sanitize_text_field($ids);
+                    $wpdb->query($wpdb->prepare( "DELETE FROM $agencies_info WHERE id = %d", $item));
+                }else {
+                    foreach ($ids as $item) {
+                        $item = sanitize_text_field($item);
+                        $wpdb->query($wpdb->prepare( "DELETE FROM $agencies_info WHERE id = %d", $item));
+                    }
+                }
             }
         }
     }
@@ -198,6 +205,15 @@ class iran_agency_map_List_Table extends WP_List_Table
         */
     function prepare_items()
     {
+        echo '
+        <form method="post">
+        <p class="search-box" id="agency-search-box">
+        <label class="screen-reader-text" for="search_id-search-input">
+        search:</label> 
+        <input id="search_id-search-input" type="text" name="s" value="" /> 
+        <input id="search-submit" class="button" type="submit" name="search-license" value="' . __('Search', 'iran-agency-map') . '" />
+        </p>
+        </form>';
         global $wpdb;
         $agencies_info = $wpdb->prefix . 'iam_agencies_info'; // do not forget about tables prefix
 
@@ -220,10 +236,14 @@ class iran_agency_map_List_Table extends WP_List_Table
         $paged = isset($_REQUEST['paged']) ? ($per_page * max(0, intval($_REQUEST['paged']) - 1)) : 0;
         $orderby = (isset($_REQUEST['orderby']) && in_array(sanitize_text_field($_REQUEST['orderby']), array_keys($this->get_sortable_columns()))) ? $_REQUEST['orderby'] : 'agency_province_name';
         $order = (isset($_REQUEST['order']) && in_array(sanitize_text_field($_REQUEST['order']), array('asc', 'desc'))) ? sanitize_text_field($_REQUEST['order']) : 'asc';
-
+        // display search result 
+        if(isset($_POST['search-license']) && !empty($_POST['s'])){
+            $search = sanitize_text_field($_POST['s']);
+            $this->items = $wpdb->get_results($wpdb->prepare("SELECT * FROM $agencies_info WHERE agency_province_name LIKE '$search' OR agency_city_name LIKE '$search' OR agency_name LIKE '$search' OR agency_full_name LIKE '$search' OR agency_tell LIKE '$search' OR agency_mobile LIKE '$search' LIMIT %d OFFSET %d", $per_page, $paged), ARRAY_A);
+        }
         // [REQUIRED] define $items array
         // notice that last argument is ARRAY_A, so we will retrieve array
-        $this->items = $wpdb->get_results($wpdb->prepare("SELECT * FROM $agencies_info ORDER BY $orderby $order LIMIT %d OFFSET %d", $per_page, $paged), ARRAY_A);
+        else $this->items = $wpdb->get_results($wpdb->prepare("SELECT * FROM $agencies_info ORDER BY $orderby $order LIMIT %d OFFSET %d", $per_page, $paged), ARRAY_A);        
 
         // [REQUIRED] configure pagination
         $this->set_pagination_args(array(

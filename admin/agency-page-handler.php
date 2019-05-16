@@ -18,7 +18,7 @@
     
         $message = '';
         if ('delete' === $table->current_action()) {
-            $count_id = count(intval($_REQUEST['id']));
+            $count_id = intval(count($_REQUEST['id']));
             $message = '<div class="updated below-h2" id="message"><p>' . sprintf(__('Items deleted: %d', 'iran-agency-map' ), $count_id) . '</p></div>';
         }
         ?>
@@ -28,7 +28,7 @@
         <h2><?php _e('agencies', 'iran-agency-map' )?> <a class="add-new-h2"
                                         href="<?php echo esc_url(get_admin_url(get_current_blog_id(), 'admin.php?page=agencies_form'));?>"><?php _e('Add new', 'iran-agency-map' )?></a>
         </h2>
-        <?php echo esc_html($message); ?>
+        <?php echo $message; ?>
     
         <form id="agencies-table" method="GET">
             <input type="hidden" name="page" value="<?php echo esc_html($_REQUEST['page']); ?>"/>
